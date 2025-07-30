@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROG7312_POE_municipal_services_application.Report_Issues;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace PROG7312_POE_municipal_services_application
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportIssues reportIssuesForm = new ReportIssues();
+            reportIssuesForm.Show();
         }
     }
 }
