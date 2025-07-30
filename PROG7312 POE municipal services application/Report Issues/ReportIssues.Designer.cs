@@ -74,6 +74,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(800, 23);
             this.progressBar1.TabIndex = 1;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -101,6 +102,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Attach Media";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -179,6 +181,52 @@
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Abandoned Vehicles",
+            "",
+            "",
+            "Animal Control",
+            "",
+            "",
+            "Electricity",
+            "",
+            "",
+            "Environmental Hazards",
+            "",
+            "",
+            "Flooding",
+            "",
+            "",
+            "Illegal Dumping",
+            "",
+            "",
+            "Noise Pollution",
+            "",
+            "",
+            "Potholes",
+            "",
+            "",
+            "Public Safety",
+            "",
+            "",
+            "Roads",
+            "",
+            "",
+            "Traffic Signals",
+            "",
+            "",
+            "Utilities",
+            "",
+            "",
+            "Vandalism",
+            "",
+            "",
+            "Waste Management",
+            "",
+            "",
+            "Water Supply",
+            "Other",
+            ""});
             this.comboBox1.Location = new System.Drawing.Point(171, 29);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(626, 21);
@@ -193,6 +241,7 @@
             this.richTextBox1.Size = new System.Drawing.Size(626, 239);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // ReportIssues
             // 
