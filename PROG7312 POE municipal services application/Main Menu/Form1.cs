@@ -32,6 +32,7 @@ namespace PROG7312_POE_municipal_services_application
         {
             ReportIssues reportIssuesForm = new ReportIssues();
             reportIssuesForm.Show();
+            this.Hide();
         }
     }
 }
