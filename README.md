@@ -1,9 +1,9 @@
-#PROG7312 POE MUNICIPAL SERVICES APPLICATION
+# PROG7312 POE MUNICIPAL SERVICES APPLICATION
 
-##INTRODUCTION
+## INTRODUCTION
 The Municipal Services Application is a C# .NET Framework software designed to enhance municipal service delivery in South Africa. This application allows residents to report issues, access local events and announcements, and track service requests. This document provides detailed instructions on how to compile, run, and use the application. This guide will help you set up and use the app, even if you're new to computers.
 
-##How to Build and Run the Application
+## How to Build and Run the Application
 
 Open the Project in Visual Studio
 
@@ -27,7 +27,7 @@ Test and Use the Application
 
 Once running, you can test and interact with the application as intended.
 
-##Application features
+## Application features
 
 Main Menu Options:
 Report Issues: Report problems like broken flooding or vandalism.
