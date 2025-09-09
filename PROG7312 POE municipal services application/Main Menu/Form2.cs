@@ -9,13 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PROG7312_POE_municipal_services_application
+namespace PROG7312_POE_municipal_services_application.Main_Menu
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -23,19 +28,19 @@ namespace PROG7312_POE_municipal_services_application
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void reportIssuesBtn_Click(object sender, EventArgs e)
         {
             ReportIssues reportIssuesForm = new ReportIssues();
             reportIssuesForm.Show();
             this.Hide();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
         {
 
         }

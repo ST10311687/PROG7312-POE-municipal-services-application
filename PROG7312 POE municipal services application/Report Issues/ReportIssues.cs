@@ -13,6 +13,7 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
 {
     public partial class ReportIssues : Form
     {
+        private List<ReportedIssues> issueReports = new List<ReportedIssues>();
         public ReportIssues()
         {
             InitializeComponent();
@@ -89,6 +90,85 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
                 MessageBox.Show("File attached: " + filePath);
                 UpdateProgressBar(20); 
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (ValidateForm()) 
+            {
+                try
+                {
+                    ReportedIssues newReport = new ReportedIssues
+                    {
+                        Location = textBox1.Text,
+                        Category = comboBox1.SelectedItem.ToString(),
+                        Description = richTextBox1.Text,
+                    };
+
+                    issueReports.Add(newReport);
+
+
+                    MessageBox.Show("Thank you for submitting your issue report! We'll review it and get back to you soon.", "Submission Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //DialogResult response = MessageBox.Show("Would you like to provide feedback about the reporting process?", "Submission Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    //if (response == DialogResult.Yes)
+                    //{
+                    //    FeedbackForm feedbackForm = new FeedbackForm();
+                    //    feedbackForm.ShowDialog();
+                    //}
+
+                    ResetFormFields();
+
+                    ResetProgressBar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while submitting the report: " + ex.Message, "Submission Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please complete all required fields.", "Incomplete Form", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private bool ValidateForm()
+        {
+            bool isValid = true;            
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Please enter a valid location.", "Invalid Location", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;
+            }
+
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a category.", "No Category Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(richTextBox1.Text))
+            {
+                MessageBox.Show("Please enter a description.", "No Description", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        private void ResetFormFields()
+        {
+            textBox1.Clear();
+            comboBox1.SelectedIndex = -1;
+            richTextBox1.Clear();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReportList reportListForm = new ReportList(issueReports);
+            reportListForm.ShowDialog();
         }
     }
 }
