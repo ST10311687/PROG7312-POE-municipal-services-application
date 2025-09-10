@@ -58,7 +58,7 @@
             this.Text = "ReportList";
             this.Load += new System.EventHandler(this.ReportList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
+  //          ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
             this.ResumeLayout(false);
 
         }

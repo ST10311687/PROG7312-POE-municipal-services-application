@@ -36,8 +36,8 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form1 mainForm = new Form1();
-            mainForm.Show();
+            var mainMenuForm = new PROG7312_POE_municipal_services_application.Main_Menu.Form2();
+            mainMenuForm.Show();
             this.Close();
         }
 
