@@ -209,7 +209,7 @@
             this.label3.BackColor = System.Drawing.Color.RoyalBlue;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(81, 46);
+            this.label3.Location = new System.Drawing.Point(65, 46);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(822, 23);
@@ -217,6 +217,7 @@
             this.label3.Text = "The central point for monitoring, managing, and engaging with community services." +
     "";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // progressBar
             // 

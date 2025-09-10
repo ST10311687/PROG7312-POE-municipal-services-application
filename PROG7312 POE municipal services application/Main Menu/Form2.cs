@@ -10,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Lee James
+//ST10311687
+//The primary window that acts as the application’s entry point.
+
 
 namespace PROG7312_POE_municipal_services_application.Main_Menu
 {
@@ -27,7 +31,7 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
         {
             string imagePath = @"Pictures\CapeTownLogo-286150665.PNG";
             pictureBox1.Image = Image.FromFile(imagePath);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; // Optional: scales image to fit
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage; 
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -35,6 +39,12 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
 
         }
 
+        /// <summary>
+        /// Opens the Report Issues form as an MDI child, ensuring only one instance is open at a time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
         private void reportIssuesBtn_Click(object sender, EventArgs e)
         {
             try
@@ -43,15 +53,15 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
                 {
                     reportForm = new ReportIssues
                     {
-                        MdiParent = this,  // Set this form as the parent
-                        Dock = DockStyle.Fill // Fill the parent container
+                        MdiParent = this,  
+                        Dock = DockStyle.Fill 
                     };
-                //    reportForm.FormClosed += ReportIssues_FormClosed; // Reset reference on closure
+            
                     reportForm.Show();
                 }
                 else
                 {
-                    reportForm.Activate(); // Bring the form to focus if already open
+                    reportForm.Activate(); 
                 }
             }
             catch (Exception ex)
@@ -60,11 +70,23 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
             }
         }
 
+        /// <summary>
+        /// Handles the exit button click event to close the application with a thank you message.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void exitBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Thank you for using this application!", "Exit", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
+
+        /// <summary>
+        /// Opens the Dashboard form as an MDI child, ensuring only one instance is open at a time.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
@@ -73,14 +95,14 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
                 if (dashboardForm == null)
                 {
                     dashboardForm = new PROG7312_POE_municipal_services_application.Dashboard.DashboardForm();
-                    dashboardForm.MdiParent = this;  // Set this form as the parent
-                    dashboardForm.Dock = DockStyle.Fill; // Fill the parent container
-                    dashboardForm.FormClosed += DashboardForm_FormClosed; // Reset reference on closure
+                    dashboardForm.MdiParent = this;  
+                    dashboardForm.Dock = DockStyle.Fill; 
+                    dashboardForm.FormClosed += DashboardForm_FormClosed; 
                     dashboardForm.Show();
                 }
                 else
                 {
-                    dashboardForm.Activate(); // Bring the form to focus if already open
+                    dashboardForm.Activate(); 
                 }
             }
             catch (Exception ex)
@@ -89,10 +111,22 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
             }
         }
 
+        /// <summary>
+        /// Placeholder for future feature: Local Events button click event handler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
         private void localEventsBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Coming soon!", "Future feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// Placeholder for future feature: Requests button click event handler.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void requestsBtn_Click(object sender, EventArgs e)
         {
@@ -125,3 +159,5 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
         }
     }
 }
+
+//________________________________________________________End of File___________________________________________________________________________________

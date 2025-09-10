@@ -8,8 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Lee James
+//ST10311687
+//The dashboard form that provides an overview of municipal services.
+
 namespace PROG7312_POE_municipal_services_application.Dashboard
 {
+    /// <summary>
+    /// DashboardForm class represents the dashboard interface of the municipal services application.
+    /// </summary>
+
     public partial class DashboardForm : Form
     {
         public DashboardForm()
@@ -21,5 +29,12 @@ namespace PROG7312_POE_municipal_services_application.Dashboard
         {
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+//________________________________________________________End of File___________________________________________________________________________________
