@@ -95,14 +95,14 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
                 if (dashboardForm == null)
                 {
                     dashboardForm = new PROG7312_POE_municipal_services_application.Dashboard.DashboardForm();
-                    dashboardForm.MdiParent = this;  
-                    dashboardForm.Dock = DockStyle.Fill; 
-                    dashboardForm.FormClosed += DashboardForm_FormClosed; 
+                    dashboardForm.MdiParent = this;
+                    dashboardForm.Dock = DockStyle.Fill;
+                    dashboardForm.FormClosed += DashboardForm_FormClosed;
                     dashboardForm.Show();
                 }
                 else
                 {
-                    dashboardForm.Activate(); 
+                    dashboardForm.Activate();
                 }
             }
             catch (Exception ex)
@@ -156,6 +156,11 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
         private void DashboardForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             dashboardForm = null;
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

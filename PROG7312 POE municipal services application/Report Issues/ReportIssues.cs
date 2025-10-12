@@ -257,6 +257,16 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
         {
          
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

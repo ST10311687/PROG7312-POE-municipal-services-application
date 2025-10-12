@@ -16,9 +16,9 @@ namespace PROG7312_POE_municipal_services_application
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new Form1());
             Application.Run(new Main_Menu.Form2());
-
+            // Application.Run(new Report_Issues.ReportIssuesRedone());
+         
         }
     }
 }
