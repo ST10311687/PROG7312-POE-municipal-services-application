@@ -58,6 +58,7 @@
     <Compile Include="Dashboard\DashboardRedone.Designer.cs">
       <DependentUpon>DashboardRedone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Local Events and Announcements\EventsData.cs" />
     <Compile Include="Local Events and Announcements\EventUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Local Events and Announcements\EventUserControl.resx">
       <DependentUpon>EventUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Local Events and Announcements\LocalEvents.resx">
+      <DependentUpon>LocalEvents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Menu\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
