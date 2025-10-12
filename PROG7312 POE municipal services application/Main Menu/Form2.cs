@@ -1,4 +1,5 @@
 ﻿
+using PROG7312_POE_municipal_services_application.Local_Events_and_Announcements;
 using PROG7312_POE_municipal_services_application.Report_Issues;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
         private PROG7312_POE_municipal_services_application.Dashboard.DashboardForm dashboardForm;
         private object dashboard;
         private ReportIssues reportForm;
+        private AddEventForm localEventsForm;
         public Form2()
         {
             InitializeComponent();
@@ -119,7 +121,27 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
 
         private void localEventsBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming soon!", "Future feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                if (localEventsForm == null)
+                {
+                    localEventsForm = new AddEventForm
+                    {
+                        MdiParent = this,
+                        Dock = DockStyle.Fill
+                    };
+                    localEventsForm.FormClosed += (s, args) => localEventsForm = null;
+                    localEventsForm.Show();
+                }
+                else
+                {
+                    localEventsForm.Activate();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while opening Local Events: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>

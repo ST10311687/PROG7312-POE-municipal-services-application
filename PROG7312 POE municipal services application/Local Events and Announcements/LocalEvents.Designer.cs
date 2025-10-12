@@ -1,6 +1,6 @@
 ﻿namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcements
 {
-    partial class LocalEvents
+    partial class AddEventForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.addEventPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.eventsUserControl = new PROG7312_POE_municipal_services_application.Local_Events_and_Announcements.EventUserControl();
             this.informationPanel = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.recommendationBtn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.searchHistoryBtn = new System.Windows.Forms.Button();
@@ -52,12 +48,10 @@
             this.filePathTxt = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.eventsUserControl = new PROG7312_POE_municipal_services_application.Local_Events_and_Announcements.EventUserControl();
             this.addEventPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.informationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,41 +73,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(180)))), ((int)(((byte)(125)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.flowLayoutPanel1.Controls.Add(this.eventsUserControl);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 232);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(991, 377);
             this.flowLayoutPanel1.TabIndex = 40;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // eventsUserControl
-            // 
-            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.eventsUserControl.BackColor = System.Drawing.Color.White;
-            this.eventsUserControl.EventCategory = null;
-            this.eventsUserControl.EventDescription = null;
-            this.eventsUserControl.EventImage = null;
-            this.eventsUserControl.EventLocation = null;
-            this.eventsUserControl.EventName = null;
-            this.eventsUserControl.EventTime = new System.DateTime(((long)(0)));
-            this.eventsUserControl.Location = new System.Drawing.Point(2, 2);
-            this.eventsUserControl.Margin = new System.Windows.Forms.Padding(2);
-            this.eventsUserControl.Name = "eventsUserControl";
-            this.eventsUserControl.Size = new System.Drawing.Size(988, 287);
-            this.eventsUserControl.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.eventsUserControl, "Recent events and announcements");
-            this.eventsUserControl.Load += new System.EventHandler(this.eventsUserControl_Load);
             // 
             // informationPanel
             // 
-            this.informationPanel.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.informationPanel.Controls.Add(this.pictureBox3);
-            this.informationPanel.Controls.Add(this.pictureBox2);
+            this.informationPanel.BackColor = System.Drawing.Color.LightSkyBlue;
             this.informationPanel.Controls.Add(this.recommendationBtn);
-            this.informationPanel.Controls.Add(this.pictureBox1);
             this.informationPanel.Controls.Add(this.searchBtn);
             this.informationPanel.Controls.Add(this.panel2);
             this.informationPanel.Controls.Add(this.label2);
@@ -126,38 +97,16 @@
             this.informationPanel.Size = new System.Drawing.Size(991, 237);
             this.informationPanel.TabIndex = 39;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pictureBox3.Location = new System.Drawing.Point(423, 193);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(22, 23);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 59;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.ForestGreen;
-            this.pictureBox2.Location = new System.Drawing.Point(140, 194);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 58;
-            this.pictureBox2.TabStop = false;
-            // 
             // recommendationBtn
             // 
             this.recommendationBtn.AutoSize = true;
-            this.recommendationBtn.BackColor = System.Drawing.Color.DarkOrange;
+            this.recommendationBtn.BackColor = System.Drawing.Color.Navy;
             this.recommendationBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recommendationBtn.ForeColor = System.Drawing.Color.White;
-            this.recommendationBtn.Location = new System.Drawing.Point(233, 181);
+            this.recommendationBtn.Location = new System.Drawing.Point(107, 178);
             this.recommendationBtn.Margin = new System.Windows.Forms.Padding(2);
             this.recommendationBtn.Name = "recommendationBtn";
-            this.recommendationBtn.Size = new System.Drawing.Size(221, 46);
+            this.recommendationBtn.Size = new System.Drawing.Size(189, 46);
             this.recommendationBtn.TabIndex = 57;
             this.recommendationBtn.Text = "Recommended event";
             this.recommendationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,27 +114,16 @@
             this.recommendationBtn.UseVisualStyleBackColor = false;
             this.recommendationBtn.Click += new System.EventHandler(this.recommendationBtn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(110)))), ((int)(((byte)(51)))));
-            this.pictureBox1.Location = new System.Drawing.Point(590, 184);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
-            // 
             // searchBtn
             // 
             this.searchBtn.AutoSize = true;
-            this.searchBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.searchBtn.BackColor = System.Drawing.Color.Navy;
             this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(46, 181);
+            this.searchBtn.Location = new System.Drawing.Point(11, 179);
             this.searchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(124, 46);
+            this.searchBtn.Size = new System.Drawing.Size(73, 46);
             this.searchBtn.TabIndex = 37;
             this.searchBtn.Text = "Search";
             this.searchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,7 +133,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.searchHistoryBtn);
             this.panel2.Controls.Add(this.searchTxtBox);
@@ -216,7 +154,7 @@
             this.searchHistoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchHistoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchHistoryBtn.ForeColor = System.Drawing.Color.White;
-            this.searchHistoryBtn.Location = new System.Drawing.Point(587, 48);
+            this.searchHistoryBtn.Location = new System.Drawing.Point(302, 51);
             this.searchHistoryBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchHistoryBtn.Name = "searchHistoryBtn";
             this.searchHistoryBtn.Size = new System.Drawing.Size(178, 25);
@@ -228,7 +166,7 @@
             // 
             // searchTxtBox
             // 
-            this.searchTxtBox.Location = new System.Drawing.Point(718, 19);
+            this.searchTxtBox.Location = new System.Drawing.Point(469, 15);
             this.searchTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchTxtBox.Name = "searchTxtBox";
             this.searchTxtBox.Size = new System.Drawing.Size(192, 20);
@@ -240,13 +178,14 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label3.Location = new System.Drawing.Point(566, 17);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(299, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 18);
             this.label3.TabIndex = 5;
             this.label3.Text = "Search by keyword : ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // resetBtn
             // 
@@ -254,7 +193,7 @@
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(800, 47);
+            this.resetBtn.Location = new System.Drawing.Point(483, 51);
             this.resetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(178, 25);
@@ -266,7 +205,7 @@
             // 
             // dateFilter
             // 
-            this.dateFilter.Location = new System.Drawing.Point(302, 17);
+            this.dateFilter.Location = new System.Drawing.Point(33, 47);
             this.dateFilter.Margin = new System.Windows.Forms.Padding(2);
             this.dateFilter.Name = "dateFilter";
             this.dateFilter.Size = new System.Drawing.Size(260, 20);
@@ -278,7 +217,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
@@ -311,7 +250,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(152, 38);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
@@ -322,19 +261,19 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(110)))), ((int)(((byte)(51)))));
+            this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(524, 179);
+            this.button1.Location = new System.Drawing.Point(322, 179);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 48);
+            this.button1.Size = new System.Drawing.Size(63, 45);
             this.button1.TabIndex = 2;
             this.button1.Text = "Back";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.button1, "Go back to main window");
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.backBtn1_Click);
             // 
             // label8
             // 
@@ -342,7 +281,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(110)))), ((int)(((byte)(51)))));
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(315, 0);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
@@ -368,7 +307,26 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // LocalEvents
+            // eventsUserControl
+            // 
+            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventsUserControl.BackColor = System.Drawing.Color.White;
+            this.eventsUserControl.EventCategory = null;
+            this.eventsUserControl.EventDescription = null;
+            this.eventsUserControl.EventImage = null;
+            this.eventsUserControl.EventLocation = null;
+            this.eventsUserControl.EventName = null;
+            this.eventsUserControl.EventTime = new System.DateTime(((long)(0)));
+            this.eventsUserControl.Location = new System.Drawing.Point(2, 2);
+            this.eventsUserControl.Margin = new System.Windows.Forms.Padding(2);
+            this.eventsUserControl.Name = "eventsUserControl";
+            this.eventsUserControl.Size = new System.Drawing.Size(988, 287);
+            this.eventsUserControl.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.eventsUserControl, "Recent events and announcements");
+            this.eventsUserControl.Load += new System.EventHandler(this.eventsUserControl_Load);
+            // 
+            // AddEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -377,16 +335,13 @@
             this.Controls.Add(this.addEventPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "LocalEvents";
+            this.Name = "AddEventForm";
             this.Text = "AddEventForm";
             this.addEventPanel.ResumeLayout(false);
             this.addEventPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.informationPanel.ResumeLayout(false);
             this.informationPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -409,10 +364,7 @@
         private System.Windows.Forms.ComboBox categorySearchComboBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button recommendationBtn;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private EventUserControl eventsUserControl;
         private System.Windows.Forms.Button resetBtn;
         private System.Windows.Forms.Label label3;

@@ -88,5 +88,10 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 pictureBoxDisplay.Image = value;
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

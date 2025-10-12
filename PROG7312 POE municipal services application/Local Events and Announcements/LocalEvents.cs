@@ -16,7 +16,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <summary>
         /// Declare an event queue to hold sample events.
         /// </summary>
-        private Queue<EventData> eventQueue = new Queue<EventData>();
+        private Queue<EventsData> eventQueue = new Queue<EventsData>();
 
         /// <summary>
         /// dictionary used to count for the searches.
@@ -26,7 +26,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <summary>
         /// sortedDictionary to organize events by date
         /// </summary>
-        private SortedDictionary<DateTime, Queue<EventData>> eventDictionary = new SortedDictionary<DateTime, Queue<EventData>>();
+        private SortedDictionary<DateTime, Queue<EventsData>> eventDictionary = new SortedDictionary<DateTime, Queue<EventsData>>();
 
         /// <summary>
         /// defining a HashSet to store unique categories.
@@ -63,7 +63,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             {
                 if (!eventDictionary.ContainsKey(eventItem.Time))
                 {
-                    eventDictionary[eventItem.Time] = new Queue<EventData>();
+                    eventDictionary[eventItem.Time] = new Queue<EventsData>();
                 }
                 eventDictionary[eventItem.Time].Enqueue(eventItem); // Use Enqueue for Queue
             }
@@ -84,7 +84,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 foreach (var eventItem in kvp.Value)
                 {
                     // Create an EventsUserControl for each event and set its properties
-                    EventsUserControl eventControl = new EventsUserControl
+                    EventUserControl eventControl = new EventUserControl
                     {
                         EventName = eventItem.Name,
                         EventCategory = eventItem.Category,
@@ -107,157 +107,157 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         private void SampleEvents()
         {
             // Community Meetings
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Community Town Hall Meeting",
                 category: "Community Meetings",
                 description: "Discuss upcoming infrastructure projects with local council.",
                 time: DateTime.Now.AddDays(-1),
-                media: Resources.fad05dafe7964a89b8c4d4adc2266c85,
+                media: Image.FromFile(@"Pictures\ComMeeting.jpg"),
                 location: "Town Hall",
                 formattedTime: DateTime.Now.AddDays(-1).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Neighborhood Watch Assembly",
                 category: "Community Meetings",
                 description: "Plan safety measures with the community and police department.",
                 time: DateTime.Now.AddDays(7),
-                media: Resources.hall_meeting,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Community Center",
                 formattedTime: DateTime.Now.AddDays(7).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Festival
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Annual Music and Food Festival",
                 category: "Festival",
                 description: "Experience local bands and food stalls in Rosebank.",
                 time: DateTime.Now.AddDays(-5),
-                media: Resources.festival_sa,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Gauteng",
                 formattedTime: DateTime.Now.AddDays(-5).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Spring Flower Festival",
                 category: "Festival",
                 description: "Enjoy floral displays and gardening workshops.",
                 time: DateTime.Now.AddDays(10),
-                media: Resources.flower_fest,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Botanical Gardens",
                 formattedTime: DateTime.Now.AddDays(10).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Workshop
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Career Development Workshop",
                 category: "Workshop",
                 description: "A workshop on building professional skills and networking.",
                 time: DateTime.Now.AddDays(-3),
-                media: Resources.workshop,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Community Center",
                 formattedTime: DateTime.Now.AddDays(-3).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Digital Skills Workshop",
                 category: "Workshop",
                 description: "Learn essential digital skills for the workplace.",
                 time: DateTime.Now.AddDays(3),
-                media: Resources.tech_workshop,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Tech Hub",
                 formattedTime: DateTime.Now.AddDays(3).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Health and Wellness
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Free Health Check-Up Camp",
                 category: "Health and Wellness",
                 description: "Get a free health check-up by licensed professionals.",
                 time: DateTime.Now.AddDays(2),
-                media: Resources.health_checkup,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Local Clinic",
                 formattedTime: DateTime.Now.AddDays(2).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Yoga in the Park",
                 category: "Health and Wellness",
                 description: "Join a free yoga session in the park.",
                 time: DateTime.Now.AddDays(5),
-                media: Resources.yoga_park,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Central Park",
                 formattedTime: DateTime.Now.AddDays(5).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Arts and Culture
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Art Exhibition: Local Artists",
                 category: "Arts and Culture",
                 description: "Explore paintings and sculptures by local artists.",
                 time: DateTime.Now.AddDays(-2),
-                media: Resources.art_gallery,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Art Gallery",
                 formattedTime: DateTime.Now.AddDays(-2).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Cultural Dance Showcase",
                 category: "Arts and Culture",
                 description: "Witness traditional dances from various cultures.",
                 time: DateTime.Now.AddDays(6),
-                media: Resources.cultural_dance,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Cultural Center",
                 formattedTime: DateTime.Now.AddDays(6).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Volunteer Opportunities
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Beach Clean-Up Volunteer Event",
                 category: "Volunteer Opportunities",
                 description: "Help clean the local beach.",
                 time: DateTime.Now.AddDays(1),
-                media: Resources.beach_cleanup,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Beachfront",
                 formattedTime: DateTime.Now.AddDays(1).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Food Bank Donation Drive",
                 category: "Volunteer Opportunities",
                 description: "Assist in organizing and distributing food for the needy.",
                 time: DateTime.Now.AddDays(4),
-                media: Resources.food_donation,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Community Hall",
                 formattedTime: DateTime.Now.AddDays(4).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Holiday Celebration
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Christmas Carol Night",
                 category: "Holiday Celebration",
                 description: "Celebrate Christmas with carols and a community dinner.",
                 time: DateTime.Now.AddDays(15),
-                media: Resources.christmas_parade,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Church Grounds",
                 formattedTime: DateTime.Now.AddDays(15).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Independence Day Parade",
                 category: "Holiday Celebration",
                 description: "Join the parade to celebrate our nation's independence.",
                 time: DateTime.Now.AddDays(-10),
-                media: Resources.independence_parade,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "Main Street",
                 formattedTime: DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
             // Government Service
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Voter Registration Drive",
                 category: "Government Service",
                 description: "Get registered to vote in upcoming elections.",
                 time: DateTime.Now.AddDays(-7),
-                media: Resources.voting,
+                media: Image.FromFile(@"Pictures\TownHall.jpg"),
                 location: "City Hall",
                 formattedTime: DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy hh:mm tt")
             ));
             // Alerts
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Severe Weather Warning",
                 category: "Alerts",
                 description: "Heavy rains and strong winds expected tomorrow.",
@@ -266,7 +266,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 location: "Cape Town",
                 formattedTime: DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
             ));
-            eventQueue.Enqueue(new EventData(
+            eventQueue.Enqueue(new EventsData(
                 name: "Water Supply Interruption Notice",
                 category: "Alerts",
                 description: "Water supply will be interrupted for maintenance.",
@@ -301,40 +301,33 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <summary>
         private void ShowRecommendations()
         {
-            // checking if there are any searches to base recommendations on
             if (!searchCounts.Any())
             {
                 MessageBox.Show("No recommended events found based on your searches.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // getting the top searched categories
             var topCategories = searchCounts
                 .OrderByDescending(kvp => kvp.Value)
                 .Select(kvp => kvp.Key)
                 .ToList();
 
-            // getting recommended events based on top searched categories
-            List<EventData> recommendedEvents = GetRecommendedEvents(topCategories);
+            List<EventsData> recommendedEvents = GetRecommendedEvents(topCategories);
 
-            // returning information if no recommendation found
             if (!recommendedEvents.Any())
             {
                 MessageBox.Show("No recommended events found based on your searches.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // creating a message to display recommended events
             var recommendationsMessage = new StringBuilder();
             recommendationsMessage.AppendLine("Here are some recommended events based on your searches:");
 
-            // looping through recommended events to build the message
             foreach (var recommendedEvent in recommendedEvents)
             {
                 recommendationsMessage.AppendLine($"- {recommendedEvent.Name} at {recommendedEvent.Location} on {recommendedEvent.FormattedTime}");
             }
 
-            // displaying recommendations in a message box
             MessageBox.Show(recommendationsMessage.ToString(), "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -343,12 +336,11 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// </summary>
         /// <param name="topCategories">List of top searched categories.</param>
         /// <returns>List of recommended events.</returns>
-        private List<EventData> GetRecommendedEvents(List<string> topCategories)
+        private List<EventsData> GetRecommendedEvents(List<string> topCategories)
         {
-            // normalizing the category names to lower case for comparison
+
             var lowerTopCategories = topCategories.Select(c => c.ToLower()).ToList();
 
-            // filtering events based on the top searched categories
             var recommendedEvents = eventQueue
                 .Where(e => lowerTopCategories.Contains(e.Category.ToLower()))
                 .ToList();
@@ -362,21 +354,17 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <summary>
         private void FilterCategory()
         {
-            // Get the selected category from the combo box
             string categoryInput = categorySearchComboBox.SelectedItem?.ToString();
             DateTime selectedDate = dateFilter.Value.Date;
 
-            // Check if no filter options are selected
             if (string.IsNullOrEmpty(categoryInput) || selectedDate == DateTime.MinValue)
             {
                 MessageBox.Show("Please select a category and date to filter the events.", "Filter Events", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Convert the category to lowercase for comparison
             string categoryInputLower = categoryInput?.ToLower();
 
-            // Update the search count for the selected category if it exists
             if (!string.IsNullOrEmpty(categoryInputLower))
             {
                 if (searchCounts.ContainsKey(categoryInputLower))
@@ -389,25 +377,22 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 }
             }
 
-            // Filter events based on the selected category and/or date
             var filteredEvents = eventQueue
                 .Where(e =>
                     (string.IsNullOrEmpty(categoryInputLower) || e.Category.ToLower() == categoryInputLower) &&
                     (selectedDate == DateTime.MinValue || e.Time.Date == selectedDate))
                 .ToList();
 
-            // If no events match the filter, display a message
             if (!filteredEvents.Any())
             {
                 MessageBox.Show("No events found matching the selected category and date.", "Filter Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Display the filtered events in the FlowLayoutPanel
             flowLayoutPanel1.Controls.Clear();
             foreach (var eventItem in filteredEvents)
             {
-                EventsUserControl eventControl = new EventsUserControl
+                EventUserControl eventControl = new EventUserControl
                 {
                     EventName = eventItem.Name,
                     EventCategory = eventItem.Category,
@@ -425,12 +410,11 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// method to display the filtered results.
         /// </summary>
         /// <param name="filteredEvents">List of filtered events to display.</param>
-        private void DisplayFilteredEvents(List<EventData> filteredEvents)
+        private void DisplayFilteredEvents(List<EventsData> filteredEvents)
         {
-            // Clear the existing controls in the flowLayoutPanel
+
             flowLayoutPanel1.Controls.Clear();
 
-            // Check if there are any events to display
             if (filteredEvents.Count == 0)
             {
                 MessageBox.Show("No events found for the selected category.", "No Events", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -440,7 +424,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             // Add each filtered event to the flowLayoutPanel
             foreach (var eventItem in filteredEvents)
             {
-                EventsUserControl eventControl = new EventsUserControl
+                EventUserControl eventControl = new EventUserControl
                 {
                     EventName = eventItem.Name,
                     EventCategory = eventItem.Category,
@@ -461,7 +445,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <param name="e"></param>
         private void recommendationBtn_Click(object sender, EventArgs e)
         {
-            // calling method to show recommendations of events
             ShowRecommendations();
         }
 
@@ -480,10 +463,8 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 return;
             }
 
-            // Add search term to history
             AddToSearchHistory(searchTerm);
 
-            // Update search counts
             if (searchCounts.ContainsKey(searchTerm))
             {
                 searchCounts[searchTerm]++;
@@ -493,13 +474,11 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 searchCounts[searchTerm] = 1;
             }
 
-            // Filter events based on the search term
             var filteredEvents = eventQueue.Where(eventItem =>
                 eventItem.Name.Equals(searchTerm, StringComparison.OrdinalIgnoreCase) ||
                 eventItem.Category.Equals(searchTerm, StringComparison.OrdinalIgnoreCase)
             ).ToList();
 
-            // Display filtered events or show a message if no matches found
             if (filteredEvents.Count > 0)
             {
                 DisplayFilteredEvents(filteredEvents);
@@ -527,7 +506,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         /// <param name="searchTerm">The search term to add.</param>
         private void AddToSearchHistory(string searchTerm)
         {
-            // Add the search term to the stack
             searchHistoryStack.Push(searchTerm);
         }
 
@@ -542,7 +520,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 return;
             }
 
-            // Display the most recent search term
             string lastSearch = searchHistoryStack.Peek();
             MessageBox.Show($"Last search term: {lastSearch}", "Search History", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -614,4 +591,19 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
 
         }
 
+        private void AddEventForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventsUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+}
