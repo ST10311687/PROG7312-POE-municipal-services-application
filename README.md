@@ -49,3 +49,6 @@ Submit Button: Button to finalize and submit the issue report.
 Engagement Feature: Dynamic feature such as a label displaying encouraging messages or a ProgressBar indicating reporting progress.
 
 Navigation Buttons: Buttons for users to return to the main menu or navigate between sections.
+
+## Video link
+https://youtu.be/S53WvIjhdZk
