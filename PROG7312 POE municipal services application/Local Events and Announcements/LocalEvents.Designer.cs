@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.addEventPanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.eventsUserControl = new PROG7312_POE_municipal_services_application.Local_Events_and_Announcements.EventUserControl();
             this.informationPanel = new System.Windows.Forms.Panel();
             this.recommendationBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@
             this.filePathTxt = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.eventsUserControl = new PROG7312_POE_municipal_services_application.Local_Events_and_Announcements.EventUserControl();
             this.addEventPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.informationPanel.SuspendLayout();
@@ -80,6 +80,25 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(991, 377);
             this.flowLayoutPanel1.TabIndex = 40;
+            // 
+            // eventsUserControl
+            // 
+            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventsUserControl.BackColor = System.Drawing.Color.White;
+            this.eventsUserControl.EventCategory = null;
+            this.eventsUserControl.EventDescription = null;
+            this.eventsUserControl.EventImage = null;
+            this.eventsUserControl.EventLocation = null;
+            this.eventsUserControl.EventName = null;
+            this.eventsUserControl.EventTime = new System.DateTime(((long)(0)));
+            this.eventsUserControl.Location = new System.Drawing.Point(2, 2);
+            this.eventsUserControl.Margin = new System.Windows.Forms.Padding(2);
+            this.eventsUserControl.Name = "eventsUserControl";
+            this.eventsUserControl.Size = new System.Drawing.Size(988, 287);
+            this.eventsUserControl.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.eventsUserControl, "Recent events and announcements");
+            this.eventsUserControl.Load += new System.EventHandler(this.eventsUserControl_Load);
             // 
             // informationPanel
             // 
@@ -150,7 +169,7 @@
             // 
             // searchHistoryBtn
             // 
-            this.searchHistoryBtn.BackColor = System.Drawing.Color.ForestGreen;
+            this.searchHistoryBtn.BackColor = System.Drawing.Color.Teal;
             this.searchHistoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchHistoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchHistoryBtn.ForeColor = System.Drawing.Color.White;
@@ -189,7 +208,7 @@
             // 
             // resetBtn
             // 
-            this.resetBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.resetBtn.BackColor = System.Drawing.Color.Teal;
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBtn.ForeColor = System.Drawing.Color.White;
@@ -306,25 +325,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // eventsUserControl
-            // 
-            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.eventsUserControl.BackColor = System.Drawing.Color.White;
-            this.eventsUserControl.EventCategory = null;
-            this.eventsUserControl.EventDescription = null;
-            this.eventsUserControl.EventImage = null;
-            this.eventsUserControl.EventLocation = null;
-            this.eventsUserControl.EventName = null;
-            this.eventsUserControl.EventTime = new System.DateTime(((long)(0)));
-            this.eventsUserControl.Location = new System.Drawing.Point(2, 2);
-            this.eventsUserControl.Margin = new System.Windows.Forms.Padding(2);
-            this.eventsUserControl.Name = "eventsUserControl";
-            this.eventsUserControl.Size = new System.Drawing.Size(988, 287);
-            this.eventsUserControl.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.eventsUserControl, "Recent events and announcements");
-            this.eventsUserControl.Load += new System.EventHandler(this.eventsUserControl_Load);
             // 
             // AddEventForm
             // 

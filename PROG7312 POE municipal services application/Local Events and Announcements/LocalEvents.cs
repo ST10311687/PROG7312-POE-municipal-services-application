@@ -132,7 +132,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Festival",
                 description: "Experience local bands and food stalls in Rosebank.",
                 time: DateTime.Now.AddDays(-5),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\FoodFestival.jpeg"),
                 location: "Gauteng",
                 formattedTime: DateTime.Now.AddDays(-5).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -141,7 +141,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Festival",
                 description: "Enjoy floral displays and gardening workshops.",
                 time: DateTime.Now.AddDays(10),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Flowers.jpg"),
                 location: "Botanical Gardens",
                 formattedTime: DateTime.Now.AddDays(10).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -152,7 +152,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Workshop",
                 description: "A workshop on building professional skills and networking.",
                 time: DateTime.Now.AddDays(-3),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Workshop.jpg"),
                 location: "Community Center",
                 formattedTime: DateTime.Now.AddDays(-3).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -161,7 +161,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Workshop",
                 description: "Learn essential digital skills for the workplace.",
                 time: DateTime.Now.AddDays(3),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\DigitalWorkshop.jpeg"),
                 location: "Tech Hub",
                 formattedTime: DateTime.Now.AddDays(3).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -172,7 +172,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Health and Wellness",
                 description: "Get a free health check-up by licensed professionals.",
                 time: DateTime.Now.AddDays(2),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Health.jpg"),
                 location: "Local Clinic",
                 formattedTime: DateTime.Now.AddDays(2).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -181,7 +181,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Health and Wellness",
                 description: "Join a free yoga session in the park.",
                 time: DateTime.Now.AddDays(5),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Yoga.jpg"),
                 location: "Central Park",
                 formattedTime: DateTime.Now.AddDays(5).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -192,7 +192,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Arts and Culture",
                 description: "Explore paintings and sculptures by local artists.",
                 time: DateTime.Now.AddDays(-2),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Art.jpg"),
                 location: "Art Gallery",
                 formattedTime: DateTime.Now.AddDays(-2).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -201,7 +201,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Arts and Culture",
                 description: "Witness traditional dances from various cultures.",
                 time: DateTime.Now.AddDays(6),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Dance.jpg"),
                 location: "Cultural Center",
                 formattedTime: DateTime.Now.AddDays(6).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -212,7 +212,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Volunteer Opportunities",
                 description: "Help clean the local beach.",
                 time: DateTime.Now.AddDays(1),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Beach.jpg"),
                 location: "Beachfront",
                 formattedTime: DateTime.Now.AddDays(1).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -221,7 +221,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Volunteer Opportunities",
                 description: "Assist in organizing and distributing food for the needy.",
                 time: DateTime.Now.AddDays(4),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Food.jpg"),
                 location: "Community Hall",
                 formattedTime: DateTime.Now.AddDays(4).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -232,7 +232,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Holiday Celebration",
                 description: "Celebrate Christmas with carols and a community dinner.",
                 time: DateTime.Now.AddDays(15),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Carol.jpg"),
                 location: "Church Grounds",
                 formattedTime: DateTime.Now.AddDays(15).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -241,7 +241,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Holiday Celebration",
                 description: "Join the parade to celebrate our nation's independence.",
                 time: DateTime.Now.AddDays(-10),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Freedom.jpg"),
                 location: "Main Street",
                 formattedTime: DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -252,7 +252,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Government Service",
                 description: "Get registered to vote in upcoming elections.",
                 time: DateTime.Now.AddDays(-7),
-                media: Image.FromFile(@"Pictures\TownHall.jpg"),
+                media: Image.FromFile(@"Pictures\Voting.jpg"),
                 location: "City Hall",
                 formattedTime: DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -262,7 +262,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Alerts",
                 description: "Heavy rains and strong winds expected tomorrow.",
                 time: DateTime.Now.AddDays(0),
-                media: null,
+                media: Image.FromFile(@"Pictures\Weather.jpg"),
                 location: "Cape Town",
                 formattedTime: DateTime.Now.ToString("dd/MM/yyyy hh:mm tt")
             ));
@@ -271,7 +271,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 category: "Alerts",
                 description: "Water supply will be interrupted for maintenance.",
                 time: DateTime.Now.AddDays(3),
-                media: null,
+                media: Image.FromFile(@"Pictures\Water.jpg"),
                 location: "Suburban Areas in Gauteng",
                 formattedTime: DateTime.Now.AddDays(3).ToString("dd/MM/yyyy hh:mm tt")
             ));
