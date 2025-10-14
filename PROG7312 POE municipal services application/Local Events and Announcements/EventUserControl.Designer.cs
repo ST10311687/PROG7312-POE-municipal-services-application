@@ -62,7 +62,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(893, 296);
             this.panel1.TabIndex = 0;
@@ -72,7 +72,7 @@
             // 
             this.pictureBoxDisplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.pictureBoxDisplay.Location = new System.Drawing.Point(605, 20);
-            this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
             this.pictureBoxDisplay.Size = new System.Drawing.Size(260, 258);
             this.pictureBoxDisplay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -207,9 +207,9 @@
             this.label1.Location = new System.Drawing.Point(266, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 26);
+            this.label1.Size = new System.Drawing.Size(196, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Latest updates";
+            this.label1.Text = "Upcoming Events";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // EventUserControl
@@ -218,7 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EventUserControl";
             this.Size = new System.Drawing.Size(893, 296);
             this.panel1.ResumeLayout(false);

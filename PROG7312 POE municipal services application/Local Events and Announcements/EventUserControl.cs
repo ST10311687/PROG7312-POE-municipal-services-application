@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcements
 {
+    // This UserControl displays the details of a single event in the UI.
     public partial class EventUserControl : UserControl
     {
         public EventUserControl()
@@ -17,19 +18,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             InitializeComponent();
         }
 
-        private void EventUserControl_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void descriptionLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Variables for event properties
-        /// </summary>
+        // Private backing fields for the event properties.
         private string _eventName;
         private string _eventCategory;
         private string _eventLocation;
@@ -37,7 +26,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         private DateTime _eventTime;
         private Image _eventImage;
 
-        // Property for Event Name
+        /// <summary>
+        /// Property for the event's name. Updates the name label when set.
+        /// </summary>        
         [Category("Custom Props")]
         public string EventName
         {
@@ -45,7 +36,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             set { _eventName = value; nameLbl.Text = value; }
         }
 
-        // Property for Event Category
+        /// <summary>
+        /// Property for the event's category. Updates the category label when set.
+        /// </summary>
         [Category("Custom Props")]
         public string EventCategory
         {
@@ -53,7 +46,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             set { _eventCategory = value; categoryLbl.Text = value; }
         }
 
-        // Property for Event Location
+        /// <summary>
+        /// Property for the event's location. Updates the location label when set.
+        /// </summary>        
         [Category("Custom Props")]
         public string EventLocation
         {
@@ -61,7 +56,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             set { _eventLocation = value; locationLbl.Text = value; }
         }
 
-        // Property for Event Description
+        /// <summary>
+        /// Property for the event's description. Updates the description label when set.                                   
+        /// </summary>
         [Category("Custom Props")]
         public string EventDescription
         {
@@ -69,7 +66,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             set { _eventDescription = value; descriptionLbl.Text = value; }
         }
 
-        // Property for Event Time
+        /// <summary>
+        /// Property for the event's time. Updates the time label when set.
+        /// </summary>
         [Category("Custom Props")]
         public DateTime EventTime
         {
@@ -77,7 +76,9 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             set { _eventTime = value; timeLbl.Text = value.ToString("dd/MM/yyyy hh:mm tt"); }
         }
 
-        // Property for Event Image
+        /// <summary>
+        /// Property for the event's image. Updates the picture box when set.
+        /// </summary>
         [Category("Custom Props")]
         public Image EventImage
         {
@@ -90,6 +91,11 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void descriptionLbl_Click(object sender, EventArgs e)
         {
 
         }
