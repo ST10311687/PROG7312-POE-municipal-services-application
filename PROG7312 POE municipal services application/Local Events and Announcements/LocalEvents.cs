@@ -13,34 +13,18 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
 {
     public partial class AddEventForm : Form
     {
-        /// <summary>
-        /// Declare an event queue to hold sample events.
-        /// </summary>
+        // Queue to store all event data objects
         private Queue<EventsData> eventQueue = new Queue<EventsData>();
-
-        /// <summary>
-        /// dictionary used to count for the searches.
-        /// </summary>
+        // Dictionary to count how many times each search term is used
         private Dictionary<string, int> searchCounts = new Dictionary<string, int>();
-
-        /// <summary>
-        /// sortedDictionary to organize events by date
-        /// </summary>
+        // Sorted dictionary to organize events by date
         private SortedDictionary<DateTime, Queue<EventsData>> eventDictionary = new SortedDictionary<DateTime, Queue<EventsData>>();
-
-        /// <summary>
-        /// defining a HashSet to store unique categories.
-        /// </summary>
+        // HashSet to store unique event categories
         private HashSet<string> uniqueCategories = new HashSet<string>();
-
-        /// <summary>
-        /// defining a stack to store search history.
-        /// </summary>
+        // Stack to keep track of search history
         private Stack<string> searchHistoryStack = new Stack<string>();
 
-        /// <summary>
-        /// Initializes the AddEventForm and adds sample events to the queue.
-        /// </summary>
+        // Constructor that initializes the form and loads sample data
         public AddEventForm()
         {
             InitializeComponent();
@@ -49,41 +33,38 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             DisplayEvents();
         }
 
-
         /// <summary>
-        /// Method used to display sample events in the flowLayoutPanel using sorted dictionaries.
-        /// </summary>
+        /// Displays all events in the flowLayoutPanel, grouped by date
+        /// </summary> 
         private void DisplayEvents()
         {
-            // Clear the event dictionary before adding new events
             eventDictionary.Clear();
 
-            // Organizing events into the SortedDictionary by date by looping through the eventQueue
+            // Group events by their date
             foreach (var eventItem in eventQueue)
             {
                 if (!eventDictionary.ContainsKey(eventItem.Time))
                 {
                     eventDictionary[eventItem.Time] = new Queue<EventsData>();
                 }
-                eventDictionary[eventItem.Time].Enqueue(eventItem); // Use Enqueue for Queue
+                eventDictionary[eventItem.Time].Enqueue(eventItem);
             }
 
-            // Check if there are any events in the dictionary and return a message if empty
+
+            // Show a message if there are no events
             if (eventDictionary.Count == 0)
             {
                 MessageBox.Show("No events to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Clear any existing controls to avoid duplicates
             flowLayoutPanel1.Controls.Clear();
 
-            // Iterate through the eventDictionary and display each event in sorted order
+            // Add each event as a user control to the panel
             foreach (var kvp in eventDictionary)
             {
                 foreach (var eventItem in kvp.Value)
                 {
-                    // Create an EventsUserControl for each event and set its properties
                     EventUserControl eventControl = new EventUserControl
                     {
                         EventName = eventItem.Name,
@@ -94,19 +75,17 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                         EventImage = eventItem.Media
                     };
 
-                    // Add the event control to the flowLayoutPanel to display it in the UI
                     flowLayoutPanel1.Controls.Add(eventControl);
                 }
             }
         }
 
-
         /// <summary>
-        /// Method to create mock events to be displayed in the form.
+        /// Adds a set of sample events to the queue and collects unique categories
         /// </summary>
         private void SampleEvents()
         {
-            // Community Meetings
+            // Add various sample events
             eventQueue.Enqueue(new EventsData(
                 name: "Community Town Hall Meeting",
                 category: "Community Meetings",
@@ -126,7 +105,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(7).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Festival
             eventQueue.Enqueue(new EventsData(
                 name: "Annual Music and Food Festival",
                 category: "Festival",
@@ -146,7 +124,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(10).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Workshop
             eventQueue.Enqueue(new EventsData(
                 name: "Career Development Workshop",
                 category: "Workshop",
@@ -166,7 +143,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(3).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Health and Wellness
             eventQueue.Enqueue(new EventsData(
                 name: "Free Health Check-Up Camp",
                 category: "Health and Wellness",
@@ -186,7 +162,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(5).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Arts and Culture
             eventQueue.Enqueue(new EventsData(
                 name: "Art Exhibition: Local Artists",
                 category: "Arts and Culture",
@@ -206,7 +181,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(6).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Volunteer Opportunities
             eventQueue.Enqueue(new EventsData(
                 name: "Beach Clean-Up Volunteer Event",
                 category: "Volunteer Opportunities",
@@ -226,7 +200,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(4).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Holiday Celebration
             eventQueue.Enqueue(new EventsData(
                 name: "Christmas Carol Night",
                 category: "Holiday Celebration",
@@ -246,7 +219,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(-10).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // Government Service
             eventQueue.Enqueue(new EventsData(
                 name: "Voter Registration Drive",
                 category: "Government Service",
@@ -256,7 +228,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 location: "City Hall",
                 formattedTime: DateTime.Now.AddDays(-7).ToString("dd/MM/yyyy hh:mm tt")
             ));
-            // Alerts
+ 
             eventQueue.Enqueue(new EventsData(
                 name: "Severe Weather Warning",
                 category: "Alerts",
@@ -276,7 +248,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 formattedTime: DateTime.Now.AddDays(3).ToString("dd/MM/yyyy hh:mm tt")
             ));
 
-            // After each event, add the category to the HashSet
+            // Collect all unique categories from the events
             foreach (var eventItem in eventQueue)
             {
                 uniqueCategories.Add(eventItem.Category);
@@ -284,7 +256,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         /// <summary>
-        /// method to display categories in the search combo box.
+        /// Populates the category combo box with all unique categories
         /// </summary>
         private void DisplayCategories()
         {
@@ -296,32 +268,39 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         /// <summary>
-        /// method to show recommendations based on the most searched categories.
+        /// Shows recommended events in the same category, excluding already shown events
         /// </summary>
-        /// <summary>
-        private void ShowRecommendations()
+        private void ShowRecommendations(List<EventsData> alreadyShown = null)
         {
-            if (!searchCounts.Any())
+            string lastCategory = categorySearchComboBox.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(lastCategory))
             {
-                MessageBox.Show("No recommended events found based on your searches.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No category selected for recommendations.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            var topCategories = searchCounts
-                .OrderByDescending(kvp => kvp.Value)
-                .Select(kvp => kvp.Key)
+            // Find recommended events in the same category
+            var recommendedEvents = eventQueue
+                .Where(e => e.Category.Equals(lastCategory, StringComparison.OrdinalIgnoreCase))
                 .ToList();
 
-            List<EventsData> recommendedEvents = GetRecommendedEvents(topCategories);
+            // Exclude events already shown in the main results
+            if (alreadyShown != null)
+            {
+                recommendedEvents = recommendedEvents
+                    .Where(e => !alreadyShown.Any(a => a.Name == e.Name && a.Time == e.Time))
+                    .ToList();
+            }
 
             if (!recommendedEvents.Any())
             {
-                MessageBox.Show("No recommended events found based on your searches.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No additional recommended events found for this category.", "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
+            // Build and show the recommendations message
             var recommendationsMessage = new StringBuilder();
-            recommendationsMessage.AppendLine("Here are some recommended events based on your searches:");
+            recommendationsMessage.AppendLine("Here are some additional recommended events in this category:");
 
             foreach (var recommendedEvent in recommendedEvents)
             {
@@ -331,85 +310,7 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             MessageBox.Show(recommendationsMessage.ToString(), "Recommendations", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// method to get recommended events based on searched categories.
-        /// </summary>
-        /// <param name="topCategories">List of top searched categories.</param>
-        /// <returns>List of recommended events.</returns>
-        private List<EventsData> GetRecommendedEvents(List<string> topCategories)
-        {
-
-            var lowerTopCategories = topCategories.Select(c => c.ToLower()).ToList();
-
-            var recommendedEvents = eventQueue
-                .Where(e => lowerTopCategories.Contains(e.Category.ToLower()))
-                .ToList();
-
-            return recommendedEvents;
-        }
-
-        /// <summary>
-        /// method used to filter based on category of event/announcement.
-        /// </summary>
-        /// <summary>
-        private void FilterCategory()
-        {
-            string categoryInput = categorySearchComboBox.SelectedItem?.ToString();
-            DateTime selectedDate = dateFilter.Value.Date;
-
-            if (string.IsNullOrEmpty(categoryInput) || selectedDate == DateTime.MinValue)
-            {
-                MessageBox.Show("Please select a category and date to filter the events.", "Filter Events", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string categoryInputLower = categoryInput?.ToLower();
-
-            if (!string.IsNullOrEmpty(categoryInputLower))
-            {
-                if (searchCounts.ContainsKey(categoryInputLower))
-                {
-                    searchCounts[categoryInputLower]++;
-                }
-                else
-                {
-                    searchCounts[categoryInputLower] = 1;
-                }
-            }
-
-            var filteredEvents = eventQueue
-                .Where(e =>
-                    (string.IsNullOrEmpty(categoryInputLower) || e.Category.ToLower() == categoryInputLower) &&
-                    (selectedDate == DateTime.MinValue || e.Time.Date == selectedDate))
-                .ToList();
-
-            if (!filteredEvents.Any())
-            {
-                MessageBox.Show("No events found matching the selected category and date.", "Filter Results", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            flowLayoutPanel1.Controls.Clear();
-            foreach (var eventItem in filteredEvents)
-            {
-                EventUserControl eventControl = new EventUserControl
-                {
-                    EventName = eventItem.Name,
-                    EventCategory = eventItem.Category,
-                    EventDescription = eventItem.Description,
-                    EventLocation = eventItem.Location,
-                    EventTime = eventItem.Time,
-                    EventImage = eventItem.Media
-                };
-                flowLayoutPanel1.Controls.Add(eventControl);
-            }
-        }
-
-
-        /// <summary>
-        /// method to display the filtered results.
-        /// </summary>
-        /// <param name="filteredEvents">List of filtered events to display.</param>
+        // Displays a filtered list of events in the flowLayoutPanel
         private void DisplayFilteredEvents(List<EventsData> filteredEvents)
         {
 
@@ -421,7 +322,6 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
                 return;
             }
 
-            // Add each filtered event to the flowLayoutPanel
             foreach (var eventItem in filteredEvents)
             {
                 EventUserControl eventControl = new EventUserControl
@@ -439,44 +339,45 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         /// <summary>
-        /// Button user clicks to view recommendations.
+        /// Event handler for the recommendations button
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void recommendationBtn_Click(object sender, EventArgs e)
         {
             ShowRecommendations();
         }
 
         /// <summary>
-        /// method calling filter category when user clicks search button .
+        /// Handles the search button click: filters events by search term, category, and date
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void searchBtn_Click(object sender, EventArgs e)
         {
             string searchTerm = searchTxtBox.Text.Trim();
+            string categoryInput = categorySearchComboBox.SelectedItem?.ToString();
+            DateTime selectedDate = dateFilter.Value.Date;
 
-            if (string.IsNullOrEmpty(searchTerm))
+            if (string.IsNullOrEmpty(searchTerm) && string.IsNullOrEmpty(categoryInput))
             {
-                MessageBox.Show("Please enter a search term.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a search term or select a category.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             AddToSearchHistory(searchTerm);
 
-            if (searchCounts.ContainsKey(searchTerm))
+            if (!string.IsNullOrEmpty(searchTerm))
             {
-                searchCounts[searchTerm]++;
-            }
-            else
-            {
-                searchCounts[searchTerm] = 1;
+                if (searchCounts.ContainsKey(searchTerm))
+                    searchCounts[searchTerm]++;
+                else
+                    searchCounts[searchTerm] = 1;
             }
 
+            // Filter events by search term, category, and date
             var filteredEvents = eventQueue.Where(eventItem =>
-                eventItem.Name.Equals(searchTerm, StringComparison.OrdinalIgnoreCase) ||
-                eventItem.Category.Equals(searchTerm, StringComparison.OrdinalIgnoreCase)
+                (string.IsNullOrEmpty(searchTerm) ||
+                    eventItem.Name.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    eventItem.Category.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrEmpty(categoryInput) || eventItem.Category.Equals(categoryInput, StringComparison.OrdinalIgnoreCase)) &&
+                (selectedDate == DateTime.MinValue || eventItem.Time.Date == selectedDate)
             ).ToList();
 
             if (filteredEvents.Count > 0)
@@ -485,13 +386,13 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             }
             else
             {
-                MessageBox.Show("No events found matching the search term.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No events found matching your search and filter criteria.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                flowLayoutPanel1.Controls.Clear();
             }
-            FilterCategory();
         }
 
         /// <summary>
-        /// method used to reset the search filters.
+        /// Resets all filters and displays all events
         /// </summary>
         private void ResetFilters()
         {
@@ -501,16 +402,15 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         /// <summary>
-        /// Adds a search term to the stack.
+        /// Adds a search term to the search history stack
         /// </summary>
-        /// <param name="searchTerm">The search term to add.</param>
         private void AddToSearchHistory(string searchTerm)
         {
             searchHistoryStack.Push(searchTerm);
         }
 
         /// <summary>
-        /// Displays the last search term from the stack.
+        /// Shows the last search term from the search history
         /// </summary>
         private void ViewSearchHistory()
         {
@@ -524,19 +424,16 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
             MessageBox.Show($"Last search term: {lastSearch}", "Search History", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-
         /// <summary>
-        /// calling method that displays search history.
+        /// Event handler for the search history button
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void searchHistoryBtn_Click(object sender, EventArgs e)
         {
             ViewSearchHistory();
         }
 
         /// <summary>
-        /// Clears the search history stack.
+        /// Clears the search history and search box
         /// </summary>
         private void ClearSearchHistory()
         {
@@ -546,22 +443,17 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
 
         /// <summary>
-        /// calling the method used to reset the search filters.
+        /// Event handler for the reset button: resets filters and clears search history
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void resetBtn_Click(object sender, EventArgs e)
         {
             ResetFilters();
             ClearSearchHistory();
         }
 
-
         /// <summary>
-        /// Button user clicks to go back to the form.
+        /// Event handler for the back button: confirms and closes the form
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void backBtn1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
