@@ -497,5 +497,10 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         {
 
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

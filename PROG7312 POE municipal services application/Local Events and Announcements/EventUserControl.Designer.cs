@@ -70,7 +70,7 @@
             // 
             // pictureBoxDisplay
             // 
-            this.pictureBoxDisplay.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBoxDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxDisplay.Location = new System.Drawing.Point(605, 20);
             this.pictureBoxDisplay.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxDisplay.Name = "pictureBoxDisplay";
@@ -201,6 +201,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;

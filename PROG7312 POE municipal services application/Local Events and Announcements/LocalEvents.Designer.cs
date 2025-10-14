@@ -83,8 +83,7 @@
             // 
             // eventsUserControl
             // 
-            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventsUserControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.eventsUserControl.BackColor = System.Drawing.Color.White;
             this.eventsUserControl.EventCategory = null;
             this.eventsUserControl.EventDescription = null;
@@ -95,7 +94,7 @@
             this.eventsUserControl.Location = new System.Drawing.Point(2, 2);
             this.eventsUserControl.Margin = new System.Windows.Forms.Padding(2);
             this.eventsUserControl.Name = "eventsUserControl";
-            this.eventsUserControl.Size = new System.Drawing.Size(988, 287);
+            this.eventsUserControl.Size = new System.Drawing.Size(987, 287);
             this.eventsUserControl.TabIndex = 0;
             this.toolTip1.SetToolTip(this.eventsUserControl, "Recent events and announcements");
             this.eventsUserControl.Load += new System.EventHandler(this.eventsUserControl_Load);
@@ -118,40 +117,41 @@
             // 
             // recommendationBtn
             // 
+            this.recommendationBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.recommendationBtn.AutoSize = true;
             this.recommendationBtn.BackColor = System.Drawing.Color.Navy;
             this.recommendationBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recommendationBtn.ForeColor = System.Drawing.Color.White;
-            this.recommendationBtn.Location = new System.Drawing.Point(107, 178);
+            this.recommendationBtn.Location = new System.Drawing.Point(290, 177);
             this.recommendationBtn.Margin = new System.Windows.Forms.Padding(2);
             this.recommendationBtn.Name = "recommendationBtn";
-            this.recommendationBtn.Size = new System.Drawing.Size(189, 46);
+            this.recommendationBtn.Size = new System.Drawing.Size(190, 46);
             this.recommendationBtn.TabIndex = 57;
             this.recommendationBtn.Text = "Recommended event";
-            this.recommendationBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.recommendationBtn, "Get your recommendation based on what you search");
             this.recommendationBtn.UseVisualStyleBackColor = false;
             this.recommendationBtn.Click += new System.EventHandler(this.recommendationBtn_Click);
             // 
             // searchBtn
             // 
+            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchBtn.AutoSize = true;
             this.searchBtn.BackColor = System.Drawing.Color.Navy;
             this.searchBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(11, 179);
+            this.searchBtn.Location = new System.Drawing.Point(56, 177);
             this.searchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(73, 46);
+            this.searchBtn.Size = new System.Drawing.Size(190, 46);
             this.searchBtn.TabIndex = 37;
             this.searchBtn.Text = "Search";
-            this.searchBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.searchBtn, "Search based on selected filtering");
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.searchHistoryBtn);
@@ -164,16 +164,19 @@
             this.panel2.Location = new System.Drawing.Point(2, 83);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
+            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.panel2.Size = new System.Drawing.Size(987, 80);
             this.panel2.TabIndex = 55;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // searchHistoryBtn
             // 
+            this.searchHistoryBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.searchHistoryBtn.BackColor = System.Drawing.Color.Teal;
             this.searchHistoryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.searchHistoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchHistoryBtn.ForeColor = System.Drawing.Color.White;
-            this.searchHistoryBtn.Location = new System.Drawing.Point(302, 51);
+            this.searchHistoryBtn.Location = new System.Drawing.Point(350, 42);
             this.searchHistoryBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchHistoryBtn.Name = "searchHistoryBtn";
             this.searchHistoryBtn.Size = new System.Drawing.Size(178, 25);
@@ -185,7 +188,8 @@
             // 
             // searchTxtBox
             // 
-            this.searchTxtBox.Location = new System.Drawing.Point(469, 15);
+            this.searchTxtBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.searchTxtBox.Location = new System.Drawing.Point(518, 15);
             this.searchTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchTxtBox.Name = "searchTxtBox";
             this.searchTxtBox.Size = new System.Drawing.Size(192, 20);
@@ -195,10 +199,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(299, 17);
+            this.label3.Location = new System.Drawing.Point(347, 15);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 18);
@@ -208,11 +213,12 @@
             // 
             // resetBtn
             // 
+            this.resetBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.resetBtn.BackColor = System.Drawing.Color.Teal;
             this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(483, 51);
+            this.resetBtn.Location = new System.Drawing.Point(532, 42);
             this.resetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(178, 25);
@@ -224,20 +230,22 @@
             // 
             // dateFilter
             // 
-            this.dateFilter.Location = new System.Drawing.Point(33, 47);
+            this.dateFilter.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateFilter.Location = new System.Drawing.Point(53, 47);
             this.dateFilter.Margin = new System.Windows.Forms.Padding(2);
             this.dateFilter.Name = "dateFilter";
-            this.dateFilter.Size = new System.Drawing.Size(260, 20);
+            this.dateFilter.Size = new System.Drawing.Size(290, 20);
             this.dateFilter.TabIndex = 54;
             this.toolTip1.SetToolTip(this.dateFilter, "Select date and time");
             this.dateFilter.ValueChanged += new System.EventHandler(this.dateFilter_ValueChanged);
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(0, 17);
+            this.label1.Location = new System.Drawing.Point(50, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 18);
@@ -246,6 +254,7 @@
             // 
             // categorySearchComboBox
             // 
+            this.categorySearchComboBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.categorySearchComboBox.FormattingEnabled = true;
             this.categorySearchComboBox.Items.AddRange(new object[] {
             "Community meetings",
@@ -257,7 +266,7 @@
             "Holiday celebration",
             "Government Service",
             "Alerts"});
-            this.categorySearchComboBox.Location = new System.Drawing.Point(92, 15);
+            this.categorySearchComboBox.Location = new System.Drawing.Point(142, 15);
             this.categorySearchComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.categorySearchComboBox.Name = "categorySearchComboBox";
             this.categorySearchComboBox.Size = new System.Drawing.Size(201, 21);
@@ -267,6 +276,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
@@ -280,24 +290,23 @@
             // 
             // button1
             // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(322, 179);
+            this.button1.Location = new System.Drawing.Point(521, 177);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 45);
+            this.button1.Size = new System.Drawing.Size(190, 46);
             this.button1.TabIndex = 2;
             this.button1.Text = "Back";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.toolTip1.SetToolTip(this.button1, "Go back to main window");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.backBtn1_Click);
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
