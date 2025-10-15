@@ -99,5 +99,10 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         {
 
         }
+
+        private void locationLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

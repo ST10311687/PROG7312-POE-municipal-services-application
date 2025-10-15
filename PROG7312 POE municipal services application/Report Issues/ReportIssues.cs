@@ -68,10 +68,18 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
-            var mainMenuForm = new PROG7312_POE_municipal_services_application.Main_Menu.Form2();
-            mainMenuForm.Show();
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to go back?",
+                "Confirm Back",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+            if (this.MdiParent != null)
+            {
+                this.MdiParent.Show();
+            }
             this.Close();
         }
 
@@ -267,6 +275,8 @@ namespace PROG7312_POE_municipal_services_application.Report_Issues
         {
 
         }
+
+        
     }
 }
 

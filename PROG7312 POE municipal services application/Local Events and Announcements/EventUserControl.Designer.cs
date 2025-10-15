@@ -90,6 +90,7 @@
             this.locationLbl.Size = new System.Drawing.Size(59, 21);
             this.locationLbl.TabIndex = 10;
             this.locationLbl.Text = "where";
+            this.locationLbl.Click += new System.EventHandler(this.locationLbl_Click);
             // 
             // timeLbl
             // 
