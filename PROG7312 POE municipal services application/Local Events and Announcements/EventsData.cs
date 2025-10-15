@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Lee James
+//ST10311687
+
 namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcements
 {
     public class EventsData
@@ -39,3 +42,5 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
 
     }
 }
+
+//________________________________________________________End of File___________________________________________________________________________________

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//Lee James
+//ST10311687
+
 namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcements
 {
     // This UserControl displays the details of a single event in the UI.
@@ -106,3 +109,5 @@ namespace PROG7312_POE_municipal_services_application.Local_Events_and_Announcem
         }
     }
 }
+
+//________________________________________________________End of File___________________________________________________________________________________
