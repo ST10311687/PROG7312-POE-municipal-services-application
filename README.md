@@ -51,4 +51,4 @@ Engagement Feature: Dynamic feature such as a label displaying encouraging messa
 Navigation Buttons: Buttons for users to return to the main menu or navigate between sections.
 
 ## GitHub
-[https://youtu.be/S53WvIjhdZk](https://github.com/ST10311687/PROG7312-POE-municipal-services-application)
+(https://github.com/ST10311687/PROG7312-POE-municipal-services-application)
