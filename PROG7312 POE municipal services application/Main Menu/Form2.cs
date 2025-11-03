@@ -1,6 +1,7 @@
 ﻿
 using PROG7312_POE_municipal_services_application.Local_Events_and_Announcements;
 using PROG7312_POE_municipal_services_application.Report_Issues;
+using PROG7312_POE_municipal_services_application.Service_Request_Status;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
         private object dashboard;
         private ReportIssues reportForm;
         private AddEventForm localEventsForm;
+        private ServiceForm requestForm;
         public Form2()
         {
             InitializeComponent();
@@ -152,8 +154,33 @@ namespace PROG7312_POE_municipal_services_application.Main_Menu
 
         private void requestsBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Coming soon!", "Future feature", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                if (requestForm == null)
+                {
+                    requestForm = new ServiceForm
+                    {
+                        MdiParent = this,  
+                        Dock = DockStyle.Fill 
+                    };
+                    requestForm.FormClosed += ServiceRequest_FormClosed; 
+                    requestForm.Show();
+                }
+                else
+                {
+                    requestForm.Activate(); 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while opening the Service Request form: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
+
+        private void ServiceRequest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            requestForm = null;
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

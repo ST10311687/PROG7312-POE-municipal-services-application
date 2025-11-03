@@ -86,6 +86,9 @@
     <Compile Include="Report Issues\ReportList.Designer.cs">
       <DependentUpon>ReportList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service Request Status\BinarySearchTree.cs" />
+    <Compile Include="Service Request Status\MinHeap.cs" />
+    <Compile Include="Service Request Status\ReportData.cs" />
     <Compile Include="Service Request Status\ServiceForm.cs">
       <SubType>Form</SubType>
     </Compile>

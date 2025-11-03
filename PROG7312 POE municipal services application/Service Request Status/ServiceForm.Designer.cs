@@ -29,19 +29,19 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serviceRequestPanel = new System.Windows.Forms.Panel();
+            this.resetBtn = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.serviceTreeView = new System.Windows.Forms.TreeView();
             this.statusPanel = new System.Windows.Forms.Panel();
             this.serviceRequestsGridView = new System.Windows.Forms.DataGridView();
             this.buttonPanel = new System.Windows.Forms.Panel();
-            this.resetBtn = new System.Windows.Forms.Button();
-            this.searchBtn = new System.Windows.Forms.Button();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.categoryLbl = new System.Windows.Forms.Label();
             this.startDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -85,108 +85,15 @@
             this.serviceRequestPanel.Size = new System.Drawing.Size(975, 602);
             this.serviceRequestPanel.TabIndex = 0;
             // 
-            // endDatePicker
-            // 
-            this.endDatePicker.Location = new System.Drawing.Point(244, 508);
-            this.endDatePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(150, 20);
-            this.endDatePicker.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.endDatePicker, "Select date that request was issued");
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 508);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "End date :";
-            // 
-            // serviceTreeView
-            // 
-            this.serviceTreeView.Location = new System.Drawing.Point(555, 174);
-            this.serviceTreeView.Margin = new System.Windows.Forms.Padding(2);
-            this.serviceTreeView.Name = "serviceTreeView";
-            this.serviceTreeView.Size = new System.Drawing.Size(395, 319);
-            this.serviceTreeView.TabIndex = 65;
-            this.toolTip1.SetToolTip(this.serviceTreeView, "Displays a tree with the issues");
-            // 
-            // statusPanel
-            // 
-            this.statusPanel.Controls.Add(this.serviceRequestsGridView);
-            this.statusPanel.Location = new System.Drawing.Point(0, 174);
-            this.statusPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.statusPanel.Name = "statusPanel";
-            this.statusPanel.Size = new System.Drawing.Size(511, 319);
-            this.statusPanel.TabIndex = 64;
-            // 
-            // serviceRequestsGridView
-            // 
-            this.serviceRequestsGridView.BackgroundColor = System.Drawing.Color.LightSkyBlue;
-            this.serviceRequestsGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.serviceRequestsGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.serviceRequestsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.serviceRequestsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.serviceRequestsGridView.DefaultCellStyle = dataGridViewCellStyle10;
-            this.serviceRequestsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceRequestsGridView.GridColor = System.Drawing.Color.SaddleBrown;
-            this.serviceRequestsGridView.Location = new System.Drawing.Point(0, 0);
-            this.serviceRequestsGridView.Margin = new System.Windows.Forms.Padding(2);
-            this.serviceRequestsGridView.Name = "serviceRequestsGridView";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.serviceRequestsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.serviceRequestsGridView.RowHeadersWidth = 100;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.serviceRequestsGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.serviceRequestsGridView.RowTemplate.Height = 24;
-            this.serviceRequestsGridView.Size = new System.Drawing.Size(511, 319);
-            this.serviceRequestsGridView.TabIndex = 0;
-            this.toolTip1.SetToolTip(this.serviceRequestsGridView, "Data grid view with the service requests and their status in abinary search tree");
-            // 
-            // buttonPanel
-            // 
-            this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.buttonPanel.Location = new System.Drawing.Point(0, 544);
-            this.buttonPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPanel.Name = "buttonPanel";
-            this.buttonPanel.Size = new System.Drawing.Size(975, 58);
-            this.buttonPanel.TabIndex = 63;
-            // 
             // resetBtn
             // 
             this.resetBtn.BackColor = System.Drawing.Color.Navy;
-            this.resetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(786, 102);
+            this.resetBtn.Location = new System.Drawing.Point(756, 98);
             this.resetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetBtn.Name = "resetBtn";
-            this.resetBtn.Size = new System.Drawing.Size(178, 39);
+            this.resetBtn.Size = new System.Drawing.Size(184, 46);
             this.resetBtn.TabIndex = 60;
             this.resetBtn.Text = "Reset";
             this.toolTip1.SetToolTip(this.resetBtn, "Clear the filter and search criteria");
@@ -210,6 +117,101 @@
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
+            // endDatePicker
+            // 
+            this.endDatePicker.Location = new System.Drawing.Point(244, 508);
+            this.endDatePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.endDatePicker.Name = "endDatePicker";
+            this.endDatePicker.Size = new System.Drawing.Size(150, 20);
+            this.endDatePicker.TabIndex = 67;
+            this.toolTip1.SetToolTip(this.endDatePicker, "Select date that request was issued");
+            this.endDatePicker.ValueChanged += new System.EventHandler(this.endDatePicker_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(157, 508);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 19);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "End date :";
+            // 
+            // serviceTreeView
+            // 
+            this.serviceTreeView.Location = new System.Drawing.Point(555, 174);
+            this.serviceTreeView.Margin = new System.Windows.Forms.Padding(2);
+            this.serviceTreeView.Name = "serviceTreeView";
+            this.serviceTreeView.Size = new System.Drawing.Size(395, 319);
+            this.serviceTreeView.TabIndex = 65;
+            this.toolTip1.SetToolTip(this.serviceTreeView, "Displays a tree with the issues");
+            this.serviceTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.serviceTreeView_AfterSelect_1);
+            // 
+            // statusPanel
+            // 
+            this.statusPanel.Controls.Add(this.serviceRequestsGridView);
+            this.statusPanel.Location = new System.Drawing.Point(0, 174);
+            this.statusPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.statusPanel.Name = "statusPanel";
+            this.statusPanel.Size = new System.Drawing.Size(511, 319);
+            this.statusPanel.TabIndex = 64;
+            // 
+            // serviceRequestsGridView
+            // 
+            this.serviceRequestsGridView.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.serviceRequestsGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.serviceRequestsGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.serviceRequestsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            this.serviceRequestsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.serviceRequestsGridView.DefaultCellStyle = dataGridViewCellStyle30;
+            this.serviceRequestsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceRequestsGridView.GridColor = System.Drawing.Color.SaddleBrown;
+            this.serviceRequestsGridView.Location = new System.Drawing.Point(0, 0);
+            this.serviceRequestsGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.serviceRequestsGridView.Name = "serviceRequestsGridView";
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.serviceRequestsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            this.serviceRequestsGridView.RowHeadersWidth = 100;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black;
+            this.serviceRequestsGridView.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            this.serviceRequestsGridView.RowTemplate.Height = 24;
+            this.serviceRequestsGridView.Size = new System.Drawing.Size(511, 319);
+            this.serviceRequestsGridView.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.serviceRequestsGridView, "Data grid view with the service requests and their status in abinary search tree");
+            this.serviceRequestsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.serviceRequestsGridView_CellContentClick);
+            // 
+            // buttonPanel
+            // 
+            this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonPanel.Location = new System.Drawing.Point(0, 544);
+            this.buttonPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPanel.Name = "buttonPanel";
+            this.buttonPanel.Size = new System.Drawing.Size(975, 58);
+            this.buttonPanel.TabIndex = 63;
+            // 
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
@@ -224,6 +226,7 @@
             this.categoryComboBox.Size = new System.Drawing.Size(130, 21);
             this.categoryComboBox.TabIndex = 62;
             this.toolTip1.SetToolTip(this.categoryComboBox, "Select category of issue");
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // categoryLbl
             // 
@@ -244,6 +247,7 @@
             this.startDatePicker.Size = new System.Drawing.Size(134, 20);
             this.startDatePicker.TabIndex = 60;
             this.toolTip1.SetToolTip(this.startDatePicker, "Select date that request was issued");
+            this.startDatePicker.ValueChanged += new System.EventHandler(this.startDatePicker_ValueChanged);
             // 
             // dateLbl
             // 
@@ -269,6 +273,7 @@
             this.statusComboBox.Size = new System.Drawing.Size(197, 21);
             this.statusComboBox.TabIndex = 58;
             this.toolTip1.SetToolTip(this.statusComboBox, "Select a status for your search");
+            this.statusComboBox.SelectedIndexChanged += new System.EventHandler(this.statusComboBox_SelectedIndexChanged);
             // 
             // filterLbl
             // 
@@ -301,7 +306,6 @@
             this.searchLbl.Size = new System.Drawing.Size(90, 19);
             this.searchLbl.TabIndex = 55;
             this.searchLbl.Text = "Search ID :";
-            this.searchLbl.Click += new System.EventHandler(this.searchLbl_Click);
             // 
             // description
             // 
