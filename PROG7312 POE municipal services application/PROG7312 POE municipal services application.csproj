@@ -86,6 +86,12 @@
     <Compile Include="Report Issues\ReportList.Designer.cs">
       <DependentUpon>ReportList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service Request Status\ServiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Service Request Status\ServiceForm.Designer.cs">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +119,9 @@
     <EmbeddedResource Include="Report Issues\ReportList.resx">
       <DependentUpon>ReportList.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Service Request Status\ServiceForm.resx">
+      <DependentUpon>ServiceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -126,9 +135,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service Request Status\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Pictures\Art.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

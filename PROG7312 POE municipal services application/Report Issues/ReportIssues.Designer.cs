@@ -37,10 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -172,6 +172,17 @@
             this.tableLayoutPanel2.TabIndex = 2;
             this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Location = new System.Drawing.Point(3, 56);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(391, 47);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Back";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -203,17 +214,6 @@
             this.button4.Text = "Submit";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(3, 56);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(391, 47);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Back";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // ReportIssues
             // 
