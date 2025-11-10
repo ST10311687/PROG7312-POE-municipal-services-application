@@ -58,13 +58,10 @@ Service Request Status: Serach to view the status of a request.
 
 **Service Request Status Page:**
 
-*Search ID: Text Box for users to provide ID of request they want to view.
-
-*Status Selection: Dropdown for users to select the staus of the request they want to view.
-
-*Category Selection: Dropdown for users to select the category of the reuest they want to view.
-
-*Serach Button: Button for the user to serach for the request they want to view.
+* Search ID: Text Box for users to provide ID of request they want to view.
+* Status Selection: Dropdown for users to select the staus of the request they want to view.
+* Category Selection: Dropdown for users to select the category of the reuest they want to view.
+* Serach Button: Button for the user to serach for the request they want to view.
 
 ## GitHub
 (https://github.com/ST10311687/PROG7312-POE-municipal-services-application)
