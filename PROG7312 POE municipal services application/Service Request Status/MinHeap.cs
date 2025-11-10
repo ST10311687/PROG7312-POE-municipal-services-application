@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
+//Lee James
+//ST10311687
+
 namespace PROG7312_POE_municipal_services_application.Service_Request_Status
 {
     public class MinHeap<T>
@@ -8,14 +11,25 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
         private readonly List<T> _heap = new List<T>();
         private readonly IComparer<T> _comparer;
 
+        /// <summary>
+        /// Default constructor using the default comparer.
+        /// </summary>
         public MinHeap() : this(Comparer<T>.Default) { }
 
+        /// <summary>
+        /// Constructor that accepts a custom comparer.
+        /// </summary>
+    
         public MinHeap(IComparer<T> comparer)
         {
             _comparer = comparer ?? Comparer<T>.Default;
         }
 
         public int Count => _heap.Count;
+
+        /// <summary>
+        /// Adds an item to the heap.
+        /// </summary>
 
         public void Add(T item)
         {
@@ -44,6 +58,10 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             return min;
         }
 
+        /// <summary>
+        /// Restores the heap property by moving the element at the given index up the tree.
+        /// </summary>
+
         private void HeapifyUp(int index)
         {
             while (index > 0 && _comparer.Compare(_heap[index], _heap[(index - 1) / 2]) < 0)
@@ -54,6 +72,10 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
                 index = (index - 1) / 2;
             }
         }
+
+        /// <summary>
+        /// Restores the heap property by moving the element at the given index down the tree.
+        /// </summary>
 
         private void HeapifyDown(int index)
         {
@@ -79,3 +101,4 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
     }
 }
 
+//________________________________________________________End of File___________________________________________________________________________________

@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//Lee James
+//ST10311687
+
 namespace PROG7312_POE_municipal_services_application.Service_Request_Status
 {
     public class BinarySearchTree
     {
+        /// <summary>
+        /// Represents a node in the binary search tree.
+        /// </summary>
         public class TreeNode
         {
             public ReportData Data; 
@@ -22,17 +28,29 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             }
         }
 
-        private TreeNode root; 
+        private TreeNode root;
 
+        /// <summary>
+        /// Initializes a new instance of the BinarySearchTree class.
+        /// </summary>
+        
         public BinarySearchTree()
         {
             root = null;
         }
 
+        /// <summary>
+        /// Inserts a new ReportData into the BST.
+        /// </summary>
+
         public void Insert(ReportData data)
         {
             root = InsertRec(root, data);
         }
+
+        /// <summary>
+        /// Helper method for inserting a new ReportData into the BST recursively.
+        /// </summary>
 
         private TreeNode InsertRec(TreeNode root, ReportData data)
         {
@@ -50,10 +68,18 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             return root;
         }
 
+        /// <summary>
+        /// Searches for a ReportData by RequestID.
+        /// </summary>
+
         public ReportData Search(string requestId)
         {
             return SearchRec(root, requestId);
         }
+
+        /// <summary>
+        /// Helper method for searching a ReportData by RequestID recursively.
+        /// </summary>
 
         private ReportData SearchRec(TreeNode root, string requestId)
         {
@@ -66,12 +92,22 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             return SearchRec(root.Right, requestId);
         }
 
+        /// <summary>
+        /// Performs an in-order traversal of the BST and returns a list of ReportData in sorted order by RequestID.
+        /// </summary>
+        /// <returns></returns>
+
         public List<ReportData> InOrderTraversal()
         {
             var result = new List<ReportData>();
             InOrderRec(root, result);
             return result;
         }
+
+        /// <summary>
+        /// Helper method for in-order traversal of the BST recursively.
+        /// </summary>
+
 
         private void InOrderRec(TreeNode root, List<ReportData> result)
         {
@@ -85,3 +121,5 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
 
     }
 }
+
+//________________________________________________________End of File___________________________________________________________________________________
