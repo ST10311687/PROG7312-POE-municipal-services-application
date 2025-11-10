@@ -29,23 +29,19 @@
     private void InitializeComponent()
     {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.serviceRequestPanel = new System.Windows.Forms.Panel();
             this.resetBtn = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.endDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.serviceTreeView = new System.Windows.Forms.TreeView();
             this.statusPanel = new System.Windows.Forms.Panel();
             this.serviceRequestsGridView = new System.Windows.Forms.DataGridView();
             this.buttonPanel = new System.Windows.Forms.Panel();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.categoryLbl = new System.Windows.Forms.Label();
-            this.startDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.dateLbl = new System.Windows.Forms.Label();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.filterLbl = new System.Windows.Forms.Label();
             this.searchId = new System.Windows.Forms.TextBox();
@@ -62,16 +58,12 @@
             // 
             this.serviceRequestPanel.BackColor = System.Drawing.Color.RoyalBlue;
             this.serviceRequestPanel.Controls.Add(this.resetBtn);
-            this.serviceRequestPanel.Controls.Add(this.label1);
             this.serviceRequestPanel.Controls.Add(this.searchBtn);
-            this.serviceRequestPanel.Controls.Add(this.endDatePicker);
             this.serviceRequestPanel.Controls.Add(this.serviceTreeView);
             this.serviceRequestPanel.Controls.Add(this.statusPanel);
             this.serviceRequestPanel.Controls.Add(this.buttonPanel);
             this.serviceRequestPanel.Controls.Add(this.categoryComboBox);
             this.serviceRequestPanel.Controls.Add(this.categoryLbl);
-            this.serviceRequestPanel.Controls.Add(this.startDatePicker);
-            this.serviceRequestPanel.Controls.Add(this.dateLbl);
             this.serviceRequestPanel.Controls.Add(this.statusComboBox);
             this.serviceRequestPanel.Controls.Add(this.filterLbl);
             this.serviceRequestPanel.Controls.Add(this.searchId);
@@ -84,6 +76,7 @@
             this.serviceRequestPanel.Name = "serviceRequestPanel";
             this.serviceRequestPanel.Size = new System.Drawing.Size(975, 602);
             this.serviceRequestPanel.TabIndex = 0;
+            this.serviceRequestPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.serviceRequestPanel_Paint);
             // 
             // resetBtn
             // 
@@ -91,7 +84,7 @@
             this.resetBtn.BackColor = System.Drawing.Color.Navy;
             this.resetBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resetBtn.ForeColor = System.Drawing.Color.White;
-            this.resetBtn.Location = new System.Drawing.Point(698, 141);
+            this.resetBtn.Location = new System.Drawing.Point(636, 115);
             this.resetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.resetBtn.Name = "resetBtn";
             this.resetBtn.Size = new System.Drawing.Size(184, 40);
@@ -108,7 +101,7 @@
             this.searchBtn.BackColor = System.Drawing.Color.Navy;
             this.searchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.Location = new System.Drawing.Point(698, 92);
+            this.searchBtn.Location = new System.Drawing.Point(424, 115);
             this.searchBtn.Margin = new System.Windows.Forms.Padding(2);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(184, 40);
@@ -117,30 +110,6 @@
             this.toolTip1.SetToolTip(this.searchBtn, "Search and filter");
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // endDatePicker
-            // 
-            this.endDatePicker.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.endDatePicker.Location = new System.Drawing.Point(478, 129);
-            this.endDatePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(150, 20);
-            this.endDatePicker.TabIndex = 67;
-            this.toolTip1.SetToolTip(this.endDatePicker, "Select date that request was issued");
-            this.endDatePicker.ValueChanged += new System.EventHandler(this.endDatePicker_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 129);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 19);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "End date :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // serviceTreeView
             // 
@@ -169,40 +138,40 @@
             this.serviceRequestsGridView.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.serviceRequestsGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.serviceRequestsGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.serviceRequestsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.serviceRequestsGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.serviceRequestsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.SaddleBrown;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.serviceRequestsGridView.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SaddleBrown;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.serviceRequestsGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.serviceRequestsGridView.GridColor = System.Drawing.Color.SaddleBrown;
             this.serviceRequestsGridView.Location = new System.Drawing.Point(4, -2);
             this.serviceRequestsGridView.Margin = new System.Windows.Forms.Padding(2);
             this.serviceRequestsGridView.Name = "serviceRequestsGridView";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.serviceRequestsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.serviceRequestsGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.serviceRequestsGridView.RowHeadersWidth = 100;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
-            this.serviceRequestsGridView.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.serviceRequestsGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.serviceRequestsGridView.RowTemplate.Height = 24;
             this.serviceRequestsGridView.Size = new System.Drawing.Size(496, 319);
             this.serviceRequestsGridView.TabIndex = 0;
@@ -247,30 +216,6 @@
             this.categoryLbl.TabIndex = 61;
             this.categoryLbl.Text = "Category : ";
             this.categoryLbl.Click += new System.EventHandler(this.categoryLbl_Click);
-            // 
-            // startDatePicker
-            // 
-            this.startDatePicker.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.startDatePicker.Location = new System.Drawing.Point(478, 92);
-            this.startDatePicker.Margin = new System.Windows.Forms.Padding(2);
-            this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(150, 20);
-            this.startDatePicker.TabIndex = 60;
-            this.toolTip1.SetToolTip(this.startDatePicker, "Select date that request was issued");
-            this.startDatePicker.ValueChanged += new System.EventHandler(this.startDatePicker_ValueChanged);
-            // 
-            // dateLbl
-            // 
-            this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateLbl.AutoSize = true;
-            this.dateLbl.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLbl.Location = new System.Drawing.Point(385, 93);
-            this.dateLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(89, 19);
-            this.dateLbl.TabIndex = 59;
-            this.dateLbl.Text = "Start date :";
-            this.dateLbl.Click += new System.EventHandler(this.dateLbl_Click);
             // 
             // statusComboBox
             // 
@@ -379,8 +324,6 @@
     private System.Windows.Forms.Label searchLbl;
     private System.Windows.Forms.TextBox searchId;
     private System.Windows.Forms.Label filterLbl;
-    private System.Windows.Forms.DateTimePicker startDatePicker;
-    private System.Windows.Forms.Label dateLbl;
     private System.Windows.Forms.ComboBox statusComboBox;
     private System.Windows.Forms.ComboBox categoryComboBox;
     private System.Windows.Forms.Label categoryLbl;
@@ -390,8 +333,6 @@
     private System.Windows.Forms.DataGridView serviceRequestsGridView;
     private System.Windows.Forms.TreeView serviceTreeView;
     private System.Windows.Forms.ToolTip toolTip1;
-    private System.Windows.Forms.DateTimePicker endDatePicker;
-    private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Button resetBtn;
 
     }
