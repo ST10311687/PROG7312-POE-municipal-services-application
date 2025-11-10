@@ -454,5 +454,25 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
         {
 
         }
+
+        private void description_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoryLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
