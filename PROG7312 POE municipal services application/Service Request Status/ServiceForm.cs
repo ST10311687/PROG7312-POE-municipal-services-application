@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -108,16 +107,16 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             {
                 return new Queue<ReportData>(new List<ReportData>
                 {
-                    new ReportData { RequestID = "R001", Location = "Vilakazi Street, Soweto", Category = "Sanitation", Description = "Blocked drain on Vilakazi Street, Soweto", SubmissionDate = DateTime.Now.AddDays(10), Status = "Pending" },
-                    new ReportData { RequestID = "R002", Location = "Greenmarket Square, Cape Town", Category = "Sanitation", Description = "Overflowing bin in Greenmarket Square, Cape Town", SubmissionDate = DateTime.Now.AddDays(-9), Status = "Pending" },
-                    new ReportData { RequestID = "R003", Location = "Umlazi Township, Durban", Category = "Utilities", Description = "No water supply in Umlazi Township, Durban", SubmissionDate = DateTime.Now.AddDays(-2), Status = "Pending" },
-                    new ReportData { RequestID = "R004", Location = "Khayelitsha, Cape Town", Category = "Utilities", Description = "Frequent power cuts in Khayelitsha, Cape Town", SubmissionDate = DateTime.Now.AddDays(-3), Status = "Pending" },
-                    new ReportData { RequestID = "R005", Location = "N1 Highway near Johannesburg", Category = "Road Maintenance", Description = "Large potholes on the N1 Highway near Johannesburg", SubmissionDate = DateTime.Now.AddDays(-7), Status = "Pending" },
-                    new ReportData { RequestID = "R006", Location = "Rondebosch Main Road intersection, Cape Town", Category = "Road Maintenance", Description = "Broken traffic light at the Rondebosch Main Road intersection, Cape Town", SubmissionDate = DateTime.Now.AddDays(-5), Status = "Pending" },
-                    new ReportData { RequestID = "R007", Location = "Alexandra Township, Johannesburg", Category = "Public Safety", Description = "Broken streetlights in Alexandra Township, Johannesburg", SubmissionDate = DateTime.Now.AddDays(-1), Status = "Immediate Attention" },
-                    new ReportData { RequestID = "R008", Location = "Bryanston, Johannesburg", Category = "Public Safety", Description = "Tree blocking road in Bryanston, Johannesburg", SubmissionDate = DateTime.Now.AddDays(-18), Status = "Immediate Attention" },
-                    new ReportData { RequestID = "R009", Location = "Durban beachfront", Category = "Sanitation", Description = "Uncollected trash near the Durban beachfront", SubmissionDate = DateTime.Now.AddDays(-10), Status = "Pending" },
-                    new ReportData { RequestID = "R010", Location = "Centurion, Pretoria", Category = "Utilities", Description = "Low water pressure in Centurion, Pretoria", SubmissionDate = DateTime.Now.AddDays(-15), Status = "Pending" }
+                    new ReportData { RequestID = "R001", Location = "Vilakazi Street, Soweto", Category = "Sanitation", Description = "Blocked drain on Vilakazi Street, Soweto", Status = "Pending" },
+                    new ReportData { RequestID = "R002", Location = "Greenmarket Square, Cape Town", Category = "Sanitation", Description = "Overflowing bin in Greenmarket Square, Cape Town", Status = "Pending" },
+                    new ReportData { RequestID = "R003", Location = "Umlazi Township, Durban", Category = "Utilities", Description = "No water supply in Umlazi Township, Durban", Status = "Pending" },
+                    new ReportData { RequestID = "R004", Location = "Khayelitsha, Cape Town", Category = "Utilities", Description = "Frequent power cuts in Khayelitsha, Cape Town", Status = "Pending" },
+                    new ReportData { RequestID = "R005", Location = "N1 Highway near Johannesburg", Category = "Road Maintenance", Description = "Large potholes on the N1 Highway near Johannesburg", Status = "Pending" },
+                    new ReportData { RequestID = "R006", Location = "Rondebosch Main Road intersection, Cape Town", Category = "Road Maintenance", Description = "Broken traffic light at the Rondebosch Main Road intersection, Cape Town", Status = "Pending" },
+                    new ReportData { RequestID = "R007", Location = "Alexandra Township, Johannesburg", Category = "Public Safety", Description = "Broken streetlights in Alexandra Township, Johannesburg", Status = "Immediate Attention" },
+                    new ReportData { RequestID = "R008", Location = "Bryanston, Johannesburg", Category = "Public Safety", Description = "Tree blocking road in Bryanston, Johannesburg", Status = "Immediate Attention" },
+                    new ReportData { RequestID = "R009", Location = "Durban beachfront", Category = "Sanitation", Description = "Uncollected trash near the Durban beachfront", Status = "Pending" },
+                    new ReportData { RequestID = "R010", Location = "Centurion, Pretoria", Category = "Utilities", Description = "Low water pressure in Centurion, Pretoria", Status = "Pending" }
                 });
             }
             catch (Exception ex)
@@ -131,32 +130,25 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
         {
             try
             {
+                serviceTreeView.Nodes.Clear();
+
                 var rootNode = new TreeNode("Municipality Services");
+                var groups = requestDictionary.Values
+                    .GroupBy(r => r.Category ?? "Uncategorized")
+                    .OrderBy(g => g.Key);
 
-                var sanitationNode = new TreeNode("Sanitation");
-                sanitationNode.Nodes.Add("R001: Blocked drain on Vilakazi Street, Soweto");
-                sanitationNode.Nodes.Add("R002: Overflowing bin in Greenmarket Square, Cape Town");
-                sanitationNode.Nodes.Add("R009: Uncollected trash near the Durban beachfront");
-
-                var utilitiesNode = new TreeNode("Utilities");
-                utilitiesNode.Nodes.Add("R003: No water supply in Umlazi Township, Durban");
-                utilitiesNode.Nodes.Add("R004: Frequent power cuts in Khayelitsha, Cape Town");
-                utilitiesNode.Nodes.Add("R010: Low water pressure in Centurion, Pretoria");
-
-                var roadMaintenanceNode = new TreeNode("Road Maintenance");
-                roadMaintenanceNode.Nodes.Add("R005: Large potholes on the N1 Highway near Johannesburg");
-                roadMaintenanceNode.Nodes.Add("R006: Broken traffic light at the Rondebosch Main Road intersection, Cape Town");
-
-                var publicSafetyNode = new TreeNode("Public Safety");
-                publicSafetyNode.Nodes.Add("R007: Broken streetlights in Alexandra Township, Johannesburg");
-                publicSafetyNode.Nodes.Add("R008: Tree blocking road in Bryanston, Johannesburg");
-
-                rootNode.Nodes.Add(sanitationNode);
-                rootNode.Nodes.Add(utilitiesNode);
-                rootNode.Nodes.Add(roadMaintenanceNode);
-                rootNode.Nodes.Add(publicSafetyNode);
+                foreach (var group in groups)
+                {
+                    var categoryNode = new TreeNode(group.Key);
+                    foreach (var r in group.OrderBy(x => x.RequestID))
+                    {
+                        categoryNode.Nodes.Add($"{r.RequestID}: {r.Description}");
+                    }
+                    rootNode.Nodes.Add(categoryNode);
+                }
 
                 serviceTreeView.Nodes.Add(rootNode);
+                rootNode.Expand();
             }
             catch (Exception ex)
             {
@@ -164,16 +156,31 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             }
         }
 
+
         private void serviceTreeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
             try
             {
-                if (e.Node.Level > 0)
+                if (e.Node.Level == 2)
                 {
-                    string selectedRequest = e.Node.Text.Split(':')[0].Trim();
-                    var report = requestDictionary[selectedRequest];
+                    string nodeText = e.Node.Text;
+                    var parts = nodeText.Split(new[] { ':' }, 2);
+                    if (parts.Length < 1) return;
 
-                    MessageBox.Show($"Report ID: {report.RequestID}\nLocation: {report.Location}\nCategory: {report.Category}\nDescription: {report.Description}\nStatus: {report.Status}", "Report Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    string selectedRequestId = parts[0].Trim();
+
+                    if (requestDictionary != null && requestDictionary.TryGetValue(selectedRequestId, out var report))
+                    {
+                        MessageBox.Show($"Report ID: {report.RequestID}\nLocation: {report.Location}\nCategory: {report.Category}\nDescription: {report.Description}\nStatus: {report.Status}", "Report Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Report {selectedRequestId} not found.", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                  
                 }
             }
             catch (Exception ex)
@@ -182,10 +189,36 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
             }
         }
 
+        private void ServiceRequestStatusForm_Load(object sender, EventArgs e)
+        {
+            EnsureDataLoaded();  
+        }
+
+        private void EnsureDataLoaded()
+        {
+ 
+            if (bst == null || bst.InOrderTraversal().Count == 0)
+            {
+                bst = new BinarySearchTree();
+
+                Queue<ReportData> dummyReports = GenerateDummyReports();
+                foreach (var report in dummyReports)
+                {
+                    bst.Insert(report);
+                }
+
+                serviceRequestsGridView.DataSource = null;
+                serviceRequestsGridView.DataSource = new BindingList<ReportData>(dummyReports.ToList());
+            }
+        }
+
         private void searchBtn_Click(object sender, EventArgs e)
         {
             try
             {
+
+                EnsureDataLoaded();
+
                 string requestId = searchId.Text.Trim();
                 string category = categoryComboBox.SelectedItem?.ToString();
                 string status = statusComboBox.SelectedItem?.ToString();
@@ -193,11 +226,6 @@ namespace PROG7312_POE_municipal_services_application.Service_Request_Status
                 Console.WriteLine($"Search Criteria: RequestId={requestId}, Category={category}, Status={status}");
 
                 List<ReportData> allReports = bst.InOrderTraversal();
-                if (allReports.Count == 0)
-                {
-                    MessageBox.Show("No reports available in the system.", "Empty Report Tree", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
 
                 List<ReportData> filteredReports = allReports
                     .Where(r =>
