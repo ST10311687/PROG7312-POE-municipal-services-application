@@ -37,47 +37,47 @@ Service Request Status: Serach to view the status of a request.
 
 **Report Issues Page:**
 
-Location Input: Textbox for users to enter the location of the reported issue.
+*Location Input: Textbox for users to enter the location of the reported issue.
 
-Category Selection: Dropdown or list for users to select the category of the issue (e.g., roads,sanitation , utilities).
+*Category Selection: Dropdown or list for users to select the category of the issue (e.g., roads,sanitation , utilities).
 
-Description Box: RichTextBox for users to provide a detailed description of the issue.
+*Description Box: RichTextBox for users to provide a detailed description of the issue.
 
-Media Attachment: Button to open a file dialog and attach images or documents related to the issue.
+*Media Attachment: Button to open a file dialog and attach images or documents related to the issue.
 
-Submit Button: Button to finalize and submit the issue report.
+*Submit Button: Button to finalize and submit the issue report.
 
-Engagement Feature: Dynamic feature such as a label displaying encouraging messages or a ProgressBar indicating reporting progress.
+*Engagement Feature: Dynamic feature such as a label displaying encouraging messages or a ProgressBar indicating reporting progress.
 
-Navigation Buttons: Buttons for users to return to the main menu or navigate between sections.
+*Navigation Buttons: Buttons for users to return to the main menu or navigate between sections.
 
 
 **Local Events and Announcements Page:**
 
-Category Selection: Dropdown for users to filter diffrent categories of events.
+*Category Selection: Dropdown for users to filter diffrent categories of events.
 
-Serach Button: Button so search for an event. 
+*Serach Button: Button so search for an event. 
 
-Date Selection: Dropdown for users to select a specific date for an event.
+*Date Selection: Dropdown for users to select a specific date for an event.
 
-Search Keyword: Search for user to enter in a key word to serach for an event.
+*Search Keyword: Search for user to enter in a key word to serach for an event.
 
-Serach History: Button that recommends events based on the users key word searched.
+*Serach History: Button that recommends events based on the users key word searched.
 
-Reset Button: Button for users to reset the search history and start fresh.
+*Reset Button: Button for users to reset the search history and start fresh.
 
-Back Button: Button for users to return to the previous page.
+*Back Button: Button for users to return to the previous page.
 
 
 **Service Request Status Page:**
 
-Search ID: Text Box for users to provide ID of request they want to view.
+*Search ID: Text Box for users to provide ID of request they want to view.
 
-Status Selection: Dropdown for users to select the staus of the request they want to view.
+*Status Selection: Dropdown for users to select the staus of the request they want to view.
 
-Category Selection: Dropdown for users to select the category of the reuest they want to view.
+*Category Selection: Dropdown for users to select the category of the reuest they want to view.
 
-Serach Button: Button for the user to serach for the request they want to view.
+*Serach Button: Button for the user to serach for the request they want to view.
 
 ## GitHub
 (https://github.com/ST10311687/PROG7312-POE-municipal-services-application)
