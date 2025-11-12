@@ -66,5 +66,5 @@ Service Request Status: Serach to view the status of a request.
 ## GitHub
 https://github.com/ST10311687/PROG7312-POE-municipal-services-application
 
-##Video Link 
+## Video Link 
 https://youtu.be/t3CLuf_jvO4
